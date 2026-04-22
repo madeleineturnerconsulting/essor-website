@@ -61,27 +61,53 @@ export default function HomePage() {
 
       {/* Stat block, black */}
       <section className="bg-black text-white py-28 md:py-40">
-        <div className="max-w-5xl mx-auto px-6">
-          <p className="text-xs font-semibold tracking-[0.3em] uppercase text-white/40 mb-10">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs font-semibold tracking-[0.3em] uppercase text-white/40 mb-16">
             The cost of standing still
           </p>
-          <p className="font-serif text-3xl md:text-5xl font-medium leading-[1.2] tracking-tight">
-            <span className="block mb-6">
-              NZ businesses lost <span className="italic">$4.17 billion</span> to absenteeism in 2024.
-            </span>
-            <span className="block text-white/40 text-2xl md:text-3xl mb-12 font-light">
-              People not showing up.
-            </span>
-            <span className="block mb-6">
-              They lose a further <span className="italic">$7.5 billion</span> to disengagement.
-            </span>
-            <span className="block text-white/40 text-2xl md:text-3xl mb-16 font-light">
-              People showing up, but not really there.
-            </span>
-            <span className="block text-white">
+
+          <div className="grid md:grid-cols-2 gap-px bg-white/15 border border-white/15">
+            {[
+              {
+                amount: "$4.17B",
+                lost: "Lost to absenteeism in 2024",
+                caption: "People not showing up.",
+                detail: "Sick days, mental health leave, and the rising cost of an unwell workforce. The highest figure ever recorded in New Zealand.",
+              },
+              {
+                amount: "$7.5B",
+                lost: "Lost to disengagement",
+                caption: "People showing up, but not really there.",
+                detail: "Presenteeism, low productivity, higher turnover, errors, and weak culture. Physically present, mentally absent.",
+              },
+            ].map(({ amount, lost, caption, detail }) => (
+              <div
+                key={amount}
+                className="group bg-black p-10 md:p-14 flex flex-col gap-8 transition-colors duration-500 hover:bg-white/[0.03] cursor-default"
+              >
+                <p className="font-serif text-7xl md:text-8xl font-medium tracking-tight leading-none transition-transform duration-500 group-hover:translate-x-1">
+                  {amount}
+                </p>
+                <div>
+                  <p className="text-xs font-semibold tracking-[0.25em] uppercase text-white/50 mb-3">
+                    {lost}
+                  </p>
+                  <p className="font-serif text-2xl md:text-3xl font-medium italic leading-snug mb-6">
+                    {caption}
+                  </p>
+                  <p className="text-sm font-light text-white/60 leading-relaxed max-w-sm">
+                    {detail}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-20 md:mt-24 text-center">
+            <p className="font-serif text-3xl md:text-5xl font-medium leading-tight tracking-tight">
               Movement at work addresses both.
-            </span>
-          </p>
+            </p>
+          </div>
         </div>
       </section>
 
