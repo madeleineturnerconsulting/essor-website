@@ -49,7 +49,7 @@ export default function ContactPage() {
             <p className="text-xs font-semibold tracking-[0.3em] uppercase text-black/30 mb-4">
               Let&apos;s talk
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-8">
+            <h1 className="font-serif text-5xl md:text-6xl font-medium tracking-tight leading-tight mb-8">
               Get in touch
             </h1>
             <p className="text-base font-light text-black/60 leading-relaxed max-w-sm">

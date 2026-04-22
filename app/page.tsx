@@ -38,34 +38,60 @@ const benefits = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-black text-white">
+      {/* Hero, white */}
+      <section className="bg-white text-black">
         <div className="max-w-6xl mx-auto px-6 py-32 md:py-48">
-          <p className="text-xs font-semibold tracking-[0.3em] uppercase text-white/40 mb-6">
+          <p className="text-xs font-semibold tracking-[0.3em] uppercase text-black/40 mb-6">
             Corporate Wellness
           </p>
-          <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight max-w-3xl mb-8">
+          <h1 className="font-serif text-6xl md:text-8xl font-medium leading-[1.02] tracking-tight max-w-3xl mb-8">
             Your team deserves to feel good at work.
           </h1>
-          <p className="text-lg md:text-xl font-light text-white/60 max-w-xl mb-12 leading-relaxed">
-            ESSOR brings in-house Pilates to New Zealand workplaces — reducing absenteeism, easing stress, and building the kind of culture that keeps people around.
+          <p className="text-lg md:text-xl font-light text-black/60 max-w-xl mb-12 leading-relaxed">
+            ESSOR brings in-house Pilates to New Zealand workplaces, reducing absenteeism, easing stress, and building the kind of culture that keeps people around.
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-black text-sm font-semibold tracking-widest uppercase px-10 py-4 hover:bg-white/90 transition-colors"
+            className="inline-block bg-black text-white text-sm font-semibold tracking-widest uppercase px-10 py-4 hover:bg-black/80 transition-colors"
           >
             Get in touch
           </Link>
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-28 md:py-36">
+      {/* Stat block, black */}
+      <section className="bg-black text-white py-28 md:py-40">
+        <div className="max-w-5xl mx-auto px-6">
+          <p className="text-xs font-semibold tracking-[0.3em] uppercase text-white/40 mb-10">
+            The cost of standing still
+          </p>
+          <p className="font-serif text-3xl md:text-5xl font-medium leading-[1.2] tracking-tight">
+            <span className="block mb-6">
+              NZ businesses lost <span className="italic">$4.17 billion</span> to absenteeism in 2024.
+            </span>
+            <span className="block text-white/40 text-2xl md:text-3xl mb-12 font-light">
+              People not showing up.
+            </span>
+            <span className="block mb-6">
+              They lose a further <span className="italic">$7.5 billion</span> to disengagement.
+            </span>
+            <span className="block text-white/40 text-2xl md:text-3xl mb-16 font-light">
+              People showing up, but not really there.
+            </span>
+            <span className="block text-white">
+              Movement at work addresses both.
+            </span>
+          </p>
+        </div>
+      </section>
+
+      {/* Benefits, white */}
+      <section className="py-28 md:py-36 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-semibold tracking-[0.3em] uppercase text-black/30 mb-4">
             The case for Pilates
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-20 max-w-xl leading-tight">
+          <h2 className="font-serif text-5xl md:text-6xl font-medium tracking-tight mb-20 max-w-2xl leading-tight">
             What Pilates Does for Your Team
           </h2>
 
@@ -75,7 +101,7 @@ export default function HomePage() {
                 <div className="w-10 h-10 flex items-center justify-center border border-black/10 mb-6">
                   <Icon size={18} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-base font-semibold mb-3">{title}</h3>
+                <h3 className="font-serif text-2xl font-semibold mb-3">{title}</h3>
                 <p className="text-sm font-light text-black/60 leading-relaxed">{body}</p>
               </div>
             ))}
@@ -83,10 +109,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA, black */}
       <section className="bg-black text-white py-28 md:py-36">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 max-w-2xl mx-auto leading-tight">
+          <h2 className="font-serif text-5xl md:text-6xl font-medium tracking-tight mb-6 max-w-2xl mx-auto leading-tight">
             Invest in Your People. Protect Your Bottom Line.
           </h2>
           <p className="text-lg font-light text-white/60 max-w-lg mx-auto mb-12 leading-relaxed">

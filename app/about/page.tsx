@@ -9,23 +9,26 @@ export default function AboutPage() {
             <p className="text-xs font-semibold tracking-[0.3em] uppercase text-black/30 mb-4">
               Our story
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
+            <h1 className="font-serif text-5xl md:text-6xl font-medium tracking-tight leading-tight">
               About ESSOR
             </h1>
           </div>
 
           <div className="space-y-6 pt-2 md:pt-14">
             <p className="text-base font-light text-black/70 leading-relaxed">
-              ESSOR was founded on a straightforward belief: the workplace should not make people unwell. Too many organisations accept high absence rates and low energy as the cost of doing business. We think that is the wrong way to look at it.
+              ESSOR was born from two things: a deep love of movement, and first-hand experience of what happens when people don&apos;t have access to it. The numbers tell a clear story. New Zealand businesses lose $4.17 billion a year to absenteeism, and billions more to presenteeism, the quieter cost of people who show up every day but are running on empty. Regular movement during the workday is one of the most effective and accessible ways to change that. It is why ESSOR exists.
             </p>
             <p className="text-base font-light text-black/70 leading-relaxed">
-              We bring in-house Pilates directly to New Zealand workplaces, removing every barrier between your team and regular, meaningful movement. No gym memberships. No commuting to a studio. No scheduling headaches. We come to you, we run the session, and we make it easy for your people to show up.
+              Throughout a corporate career spanning Digital and Growth roles across the UK, US and Australian markets, I almost always chose to work for purpose-led businesses in the wellness sector. What I noticed across those roles was consistent: when companies actively encouraged movement, everything shifted. People showed up differently, for themselves, for their teams, and for the business.
             </p>
             <p className="text-base font-light text-black/70 leading-relaxed">
-              Pilates was our method of choice because it works. It targets the physical toll that desk work takes on the body — the tight hips, the compressed spine, the shallow breathing — and it does so in a way that is accessible to everyone, regardless of fitness background or experience. You do not need to be athletic to benefit. You just need to be willing to move.
+              At a personalised nutrition scale-up, bonus incentives and lunchtime team workouts were part of the culture. At Nike, movement classes and physio during work hours were built into the day. The typical struggle of fitting in exercise around a commute simply wasn&apos;t an issue, and the culture reflected that. People were more willing to go above and beyond, and I genuinely believe that came down to senior leadership treating movement as a priority, not a perk.
             </p>
             <p className="text-base font-light text-black/70 leading-relaxed">
-              ESSOR exists to make that easy. For employers who want to invest in their people in a way that has a measurable impact on health, culture, and retention — we are the simplest way to do it.
+              Movement has been central to my life since childhood. While others went to netball, I was at kids yoga. That translated into a career in health and wellness, and in 2021 I decided to formalise it. I completed my Mat Pilates training at Body Control Pilates in London, a world-leading and highly respected teacher training institution, and went on to complete my Pre and Post Natal qualification through Barre Body.
+            </p>
+            <p className="text-base font-light text-black/70 leading-relaxed">
+              I truly believe my purpose is to improve the lives of others through health and movement. Today, that takes shape through ESSOR. We come to your workplace, we run the session, and we make it easy for your people to show up. No gym memberships, no studio commute, no scheduling headaches. Just movement, where your team already is.
             </p>
 
             <div className="pt-6">
@@ -49,7 +52,7 @@ export default function AboutPage() {
             ].map(({ label, value }) => (
               <div key={label}>
                 <p className="text-xs font-semibold tracking-[0.25em] uppercase text-black/25 mb-3">{label}</p>
-                <p className="text-base font-medium leading-snug">{value}</p>
+                <p className="font-serif text-xl font-medium leading-snug">{value}</p>
               </div>
             ))}
           </div>

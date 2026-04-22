@@ -20,7 +20,7 @@ export default function Nav() {
   return (
     <header className="border-b border-black/10 bg-white sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="text-lg font-semibold tracking-widest">
+        <Link href="/" className="font-serif text-2xl font-semibold tracking-[0.2em]">
           ESSOR
         </Link>
 

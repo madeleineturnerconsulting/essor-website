@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
 
@@ -9,8 +9,14 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+const cormorant = Cormorant_Garamond({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+});
+
 export const metadata: Metadata = {
-  title: "ESSOR — Corporate Wellness",
+  title: "ESSOR, Corporate Wellness",
   description: "In-house Pilates for NZ workplaces. Combat absenteeism and presenteeism with ESSOR.",
 };
 
@@ -20,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} h-full antialiased`}>
+    <html lang="en" className={`${poppins.variable} ${cormorant.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Nav />
         <main className="flex-1">{children}</main>
