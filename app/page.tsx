@@ -5,6 +5,7 @@ import {
   Users,
   Brain,
   Heart,
+  ShieldCheck,
 } from "lucide-react";
 
 const benefits = [
@@ -32,6 +33,11 @@ const benefits = [
     icon: Heart,
     title: "Signals That You Care",
     body: "Offering wellness as a benefit tells your people something important: this company invests in us. That kind of message reduces turnover and attracts talent.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Reduces Injury Risk",
+    body: "Pilates builds the strength and mobility that prevents the chronic injuries desk workers are prone to. Fewer injuries means fewer ACC claims, less time off, and lower long-term costs for the business.",
   },
 ];
 
