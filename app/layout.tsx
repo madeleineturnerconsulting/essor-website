@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Cormorant_Garamond } from "next/font/google";
+import { Poppins, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
 
@@ -9,11 +9,11 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-const cormorant = Cormorant_Garamond({
-  weight: ["300", "400", "500", "600"],
+const dmSerifDisplay = DM_Serif_Display({
+  weight: "400",
   style: ["normal", "italic"],
   subsets: ["latin"],
-  variable: "--font-cormorant",
+  variable: "--font-display",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${cormorant.variable} h-full antialiased`}>
+    <html lang="en" className={`${poppins.variable} ${dmSerifDisplay.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-[#FAF8F5]">
         <Nav />
         <main className="flex-1">{children}</main>

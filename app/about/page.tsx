@@ -10,7 +10,7 @@ export default function AboutPage() {
           <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-[#1a1a1a]/40 mb-6">
             Our story
           </p>
-          <h1 className="font-serif text-[clamp(3rem,7vw,6rem)] italic font-normal leading-tight tracking-tight max-w-2xl text-[#1a1a1a]">
+          <h1 className="font-serif text-[clamp(3rem,7vw,6rem)] font-normal leading-tight tracking-tight max-w-2xl text-[#1a1a1a]">
             About ESSOR.
           </h1>
         </div>

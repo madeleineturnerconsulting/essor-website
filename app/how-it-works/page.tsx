@@ -6,7 +6,7 @@ const steps = [
     number: "01",
     icon: Phone,
     title: "Book a Discovery Call",
-    body: "We start with a conversation — no obligation, no pressure. Tell us about your team, your workplace, and what you are hoping to achieve. We will ask a few questions and share what we think could work.",
+    body: "We start with a conversation. No obligation, no pressure. Tell us about your team, your workplace, and what you are hoping to achieve. We will ask a few questions and share what we think could work.",
   },
   {
     number: "02",
@@ -38,7 +38,7 @@ export default function HowItWorksPage() {
           <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-[#1a1a1a]/40 mb-6">
             Getting started
           </p>
-          <h1 className="font-serif text-[clamp(3rem,7vw,6rem)] italic font-normal leading-tight tracking-tight max-w-2xl text-[#1a1a1a]">
+          <h1 className="font-serif text-[clamp(3rem,7vw,6rem)] font-normal leading-tight tracking-tight max-w-2xl text-[#1a1a1a]">
             Our process, in four steps.
           </h1>
         </div>

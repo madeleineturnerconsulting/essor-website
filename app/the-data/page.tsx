@@ -1,12 +1,6 @@
-import { TrendingUp, Calendar, DollarSign, Building2, UserX } from "lucide-react";
+import { TrendingUp, Calendar, DollarSign, Building2 } from "lucide-react";
 
-const absenteeismStats = [
-  {
-    icon: DollarSign,
-    number: "$4.17B",
-    label: "The annual cost of absenteeism to New Zealand businesses in 2024, the highest ever recorded",
-    source: "Southern Cross & BusinessNZ, 2025",
-  },
+const supportingStats = [
   {
     icon: Calendar,
     number: "6.7",
@@ -27,21 +21,59 @@ const absenteeismStats = [
     label: "Working days lost across New Zealand in 2024, up from 10 million in 2022",
     source: "Southern Cross & BusinessNZ, 2025",
   },
+  {
+    icon: DollarSign,
+    number: "$4.17B",
+    label: "Total cost of absenteeism to NZ businesses in 2024, the highest figure ever recorded",
+    source: "Southern Cross & BusinessNZ, 2025",
+  },
 ];
 
 export default function TheDataPage() {
   return (
     <>
-      {/* Page header */}
-      <section className="bg-[#FAF8F5] py-[120px] md:py-[160px]">
+      {/* Page header with featured stats immediately visible */}
+      <section className="bg-[#FAF8F5] pt-16 pb-[120px] md:pt-20 md:pb-[140px]">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="w-12 h-px bg-[#6B2737] mb-10" />
           <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-[#1a1a1a]/40 mb-6">
             The numbers
           </p>
-          <h1 className="font-serif text-[clamp(3rem,7vw,6rem)] italic font-normal leading-tight tracking-tight max-w-2xl text-[#1a1a1a]">
+          <h1 className="font-serif text-[clamp(3rem,7vw,6rem)] font-normal leading-tight tracking-tight max-w-2xl text-[#1a1a1a] mb-16">
             The data doesn&apos;t lie.
           </h1>
+
+          {/* Two hero stats — front and centre */}
+          <div className="grid md:grid-cols-2 gap-0">
+            <div className="pb-12 md:pb-0 md:pr-16 md:border-r border-[#6B2737]/20">
+              <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-[#1a1a1a]/40 mb-4">
+                Cost of absenteeism · NZ 2024
+              </p>
+              <p className="font-serif text-[clamp(5rem,12vw,9rem)] font-normal text-[#6B2737] leading-none tracking-tight mb-4">
+                $4.17B
+              </p>
+              <p className="text-sm font-light text-[#1a1a1a]/55 leading-[1.8] max-w-sm">
+                The highest figure ever recorded. Sick days, mental health leave, and the rising cost of an unwell workforce.
+              </p>
+              <p className="text-[10px] font-normal tracking-[0.12em] uppercase text-[#1a1a1a]/25 mt-4">
+                Southern Cross & BusinessNZ, 2025
+              </p>
+            </div>
+
+            <div className="pt-12 md:pt-0 md:pl-16 border-t md:border-t-0 border-[#6B2737]/20">
+              <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-[#1a1a1a]/40 mb-4">
+                Cost of disengagement · NZ
+              </p>
+              <p className="font-serif text-[clamp(5rem,12vw,9rem)] font-normal text-[#6B2737] leading-none tracking-tight mb-4">
+                $7.5B
+              </p>
+              <p className="text-sm font-light text-[#1a1a1a]/55 leading-[1.8] max-w-sm">
+                Presenteeism, low productivity, higher turnover, errors, and weak culture. Physically present, mentally absent.
+              </p>
+              <p className="text-[10px] font-normal tracking-[0.12em] uppercase text-[#1a1a1a]/25 mt-4">
+                HRNZ
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -50,12 +82,12 @@ export default function TheDataPage() {
         <div className="h-px bg-[#6B2737]/25" />
       </div>
 
-      {/* Intro + stats */}
+      {/* Context + supporting stats */}
       <section className="bg-[#FAF8F5] py-[120px] md:py-[160px]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl space-y-6 mb-20">
             <p className="text-base font-light text-[#1a1a1a]/65 leading-[1.8]">
-              Absenteeism cost New Zealand businesses $4.17 billion in 2024 — the highest figure ever recorded — according to the Southern Cross Health Insurance and BusinessNZ Workplace Wellness Report. The average employee missed 6.7 days of work, up from 5.5 days in 2022. Sedentary work environments, chronic stress, and poor physical health are driving people out of their chairs and onto sick leave, often before anyone sees it coming.
+              Absenteeism cost New Zealand businesses $4.17 billion in 2024, the highest figure ever recorded, according to the Southern Cross Health Insurance and BusinessNZ Workplace Wellness Report. The average employee missed 6.7 days of work, up from 5.5 days in 2022. Sedentary work environments, chronic stress, and poor physical health are driving people out of their chairs and onto sick leave, often before anyone sees it coming.
             </p>
             <p className="text-base font-light text-[#1a1a1a]/65 leading-[1.8]">
               Pilates is not just a wellness trend. It is a proven intervention that targets the exact problems desk workers face: tight hips, a weak core, poor posture, shallow breathing, and high stress. When people feel better in their bodies, they show up differently at work.
@@ -63,10 +95,10 @@ export default function TheDataPage() {
           </div>
 
           <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-[#1a1a1a]/40 mb-10">
-            Absenteeism
+            Absenteeism in detail
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#6B2737]/15 border border-[#6B2737]/15">
-            {absenteeismStats.map(({ icon: Icon, number, unit, label, source }) => (
+            {supportingStats.map(({ icon: Icon, number, unit, label, source }) => (
               <div key={number} className="bg-[#FAF8F5] p-10 flex flex-col gap-6">
                 <Icon size={16} strokeWidth={1} className="text-[#6B2737]/40" />
                 <div>
@@ -85,48 +117,6 @@ export default function TheDataPage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="h-px bg-[#6B2737]/25" />
-      </div>
-
-      {/* Disengagement */}
-      <section className="bg-[#FAF8F5] py-[120px] md:py-[160px]">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-[#1a1a1a]/40 mb-10">
-            And then there is presenteeism
-          </p>
-          <div className="max-w-3xl mb-16">
-            <p className="text-base font-light text-[#1a1a1a]/65 leading-[1.8]">
-              Absenteeism is only one half of the story. The cost of disengagement is separate, and it is even larger. These figures sit alongside the absenteeism numbers above, not within them.
-            </p>
-          </div>
-
-          <div className="border border-[#6B2737]/20 p-12 md:p-16 grid md:grid-cols-[auto_1fr] gap-10 md:gap-16 items-start">
-            <div className="flex items-start gap-5">
-              <UserX size={18} strokeWidth={1} className="text-[#6B2737]/40 flex-shrink-0 mt-5" />
-              <p className="font-serif text-[clamp(4rem,10vw,8rem)] font-normal text-[#6B2737] leading-none tracking-tight whitespace-nowrap">
-                $7.5B
-              </p>
-            </div>
-            <div className="pt-2">
-              <p className="text-base font-light text-[#1a1a1a]/65 leading-[1.8] mb-6 max-w-lg">
-                The cost of disengagement to NZ businesses. This is the broader cost of employees showing up but not performing: presenteeism, low productivity, higher turnover, errors, and weak culture. These people are physically present but mentally absent.
-              </p>
-              <p className="text-[10px] font-normal tracking-[0.15em] uppercase text-[#1a1a1a]/30">
-                HRNZ
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-12 max-w-3xl">
-            <p className="font-serif text-xl font-normal italic text-[#1a1a1a]/60 leading-snug">
-              These figures are additive, not overlapping. Together they represent the full cost of poor employee health and wellbeing to New Zealand businesses.
-            </p>
           </div>
         </div>
       </section>

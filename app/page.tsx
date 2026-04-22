@@ -38,17 +38,20 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="min-h-[calc(100svh-72px)] bg-[#FAF8F5] flex items-center">
-        <div className="max-w-6xl mx-auto px-6 py-[120px] md:py-[160px] w-full">
-          <div className="w-12 h-px bg-[#6B2737] mb-10" />
-          <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-[#1a1a1a]/40 mb-8">
+      <section className="bg-[#FAF8F5]">
+        <div className="max-w-6xl mx-auto px-6 pt-16 pb-[100px] md:pt-20 md:pb-[120px] w-full">
+          <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-[#1a1a1a]/40 mb-3">
             Corporate Wellness · New Zealand
           </p>
-          <h1 className="font-serif text-[clamp(3rem,8vw,7rem)] italic font-normal leading-[1.05] tracking-tight max-w-4xl mb-10 text-[#1a1a1a]">
+          <p className="text-[10px] font-normal tracking-[0.12em] text-[#6B2737]/70 mb-8 italic font-serif">
+            essor (n.) — to flourish, to take flight, to grow rapidly.
+          </p>
+          <div className="w-12 h-px bg-[#6B2737] mb-8" />
+          <h1 className="font-serif text-[clamp(3rem,8vw,7rem)] font-normal leading-[1.05] tracking-tight max-w-4xl mb-10 text-[#1a1a1a]">
             Your team is your greatest asset. Treat them like it.
           </h1>
           <p className="text-base font-light text-[#1a1a1a]/55 max-w-xl mb-14 leading-[1.8]">
-            ESSOR brings in-house Pilates to New Zealand workplaces — reducing absenteeism, easing stress, and building the kind of culture that keeps people around.
+            ESSOR brings in-house Pilates to New Zealand workplaces, reducing absenteeism, easing stress, and building the kind of culture that keeps people around.
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
             <Link
@@ -107,7 +110,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-20 pt-16 border-t border-[#6B2737]/20">
-            <p className="font-serif text-[clamp(1.75rem,4vw,3.5rem)] italic font-normal text-[#1a1a1a] leading-tight max-w-3xl">
+            <p className="font-serif text-[clamp(1.75rem,4vw,3.5rem)] font-normal text-[#1a1a1a] leading-tight max-w-3xl">
               Movement at work addresses both.
             </p>
           </div>
@@ -119,7 +122,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="h-px bg-[#6B2737]/25 mb-16" />
           <p className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] italic font-normal text-[#1a1a1a]/45 max-w-3xl leading-snug">
-            &ldquo;When companies actively encouraged movement, everything shifted. People showed up differently — for themselves, for their teams, and for the business.&rdquo;
+            &ldquo;When companies actively encouraged movement, everything shifted. People showed up differently, for themselves, for their teams, and for the business.&rdquo;
           </p>
           <div className="h-px bg-[#6B2737]/25 mt-16" />
         </div>
@@ -162,7 +165,7 @@ export default function HomePage() {
           <p className="text-base font-light text-[#1a1a1a]/55 max-w-lg mb-14 leading-[1.8]">
             The case for workplace wellness has never been stronger. ESSOR makes it easy to act on it.
           </p>
-          <div className="flex flex-col sm:flex-row items-start gap-5 sm:gap-8">
+          <div className="flex flex-col sm:flex-row items-start gap-5 sm:gap-8 mb-8">
             <Link
               href="/contact"
               className="inline-block bg-[#6B2737] text-[#FAF8F5] text-xs font-normal uppercase tracking-[0.15em] px-10 py-4 hover:bg-[#5a1f2d] transition-colors"
@@ -176,6 +179,9 @@ export default function HomePage() {
               See how it works
             </Link>
           </div>
+          <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-[#1a1a1a]/35">
+            Pricing on request.
+          </p>
         </div>
       </section>
     </>

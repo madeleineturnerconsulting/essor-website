@@ -11,7 +11,7 @@
   --color-foreground: var(--foreground);
   --color-burgundy: var(--burgundy);
   --font-sans: var(--font-poppins);
-  --font-serif: var(--font-cormorant);
+  --font-serif: var(--font-display);
 }
 
 body {

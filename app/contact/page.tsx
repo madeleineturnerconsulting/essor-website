@@ -50,7 +50,7 @@ export default function ContactPage() {
           <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-[#1a1a1a]/40 mb-6">
             Let&apos;s talk
           </p>
-          <h1 className="font-serif text-[clamp(3rem,7vw,6rem)] italic font-normal leading-tight tracking-tight max-w-2xl text-[#1a1a1a]">
+          <h1 className="font-serif text-[clamp(3rem,7vw,6rem)] font-normal leading-tight tracking-tight max-w-2xl text-[#1a1a1a]">
             Get in touch.
           </h1>
         </div>
@@ -67,7 +67,10 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-[1fr_2fr] gap-20 items-start">
             <div>
               <p className="text-base font-light text-[#1a1a1a]/55 leading-[1.8] max-w-xs">
-                Tell us about your team and what you are hoping to achieve. We will get back to you within one business day.
+                Tell us about your team and your workplace. We will get back to you within one business day.
+              </p>
+              <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-[#1a1a1a]/35 mt-6">
+                Pricing on request.
               </p>
             </div>
 
@@ -131,7 +134,7 @@ export default function ContactPage() {
                       required
                       rows={7}
                       className="border border-[#1a1a1a]/15 px-5 py-4 text-sm font-light focus:outline-none focus:border-[#6B2737] transition-colors bg-transparent resize-none text-[#1a1a1a] placeholder:text-[#1a1a1a]/30"
-                      placeholder="Tell us about your team, your workplace, and what you are hoping to achieve."
+                      placeholder="Tell us about your team and your workplace."
                     />
                   </label>
 
