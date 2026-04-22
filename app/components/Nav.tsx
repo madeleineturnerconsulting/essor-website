@@ -6,7 +6,6 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "/", label: "Home" },
   { href: "/how-it-works", label: "How It Works" },
   { href: "/the-data", label: "The Data" },
   { href: "/about", label: "About" },
@@ -18,21 +17,24 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="border-b border-black/10 bg-white sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="font-serif text-2xl font-semibold tracking-[0.2em]">
+    <header className="border-b border-[#6B2737]/25 bg-[#FAF8F5] sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between">
+        <Link
+          href="/"
+          className="font-serif text-xl tracking-[0.25em] text-[#1a1a1a] font-normal"
+        >
           ESSOR
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-xs font-light uppercase tracking-[0.15em] transition-colors ${
                 pathname === href
-                  ? "text-black"
-                  : "text-black/40 hover:text-black"
+                  ? "text-[#6B2737]"
+                  : "text-[#1a1a1a]/45 hover:text-[#1a1a1a]"
               }`}
             >
               {label}
@@ -41,24 +43,24 @@ export default function Nav() {
         </nav>
 
         <button
-          className="md:hidden p-1"
+          className="md:hidden text-[#6B2737]"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-black/10 bg-white">
-          <nav className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden border-t border-[#6B2737]/25 bg-[#FAF8F5]">
+          <nav className="max-w-6xl mx-auto px-6 py-8 flex flex-col gap-6">
             {links.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                className={`text-sm font-medium ${
-                  pathname === href ? "text-black" : "text-black/40"
+                className={`text-xs font-light uppercase tracking-[0.15em] ${
+                  pathname === href ? "text-[#6B2737]" : "text-[#1a1a1a]/45"
                 }`}
               >
                 {label}

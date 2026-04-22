@@ -42,103 +42,118 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="py-28 md:py-36">
+    <>
+      {/* Page header */}
+      <section className="bg-[#FAF8F5] py-[120px] md:py-[160px]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="w-12 h-px bg-[#6B2737] mb-10" />
+          <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-[#1a1a1a]/40 mb-6">
+            Let&apos;s talk
+          </p>
+          <h1 className="font-serif text-[clamp(3rem,7vw,6rem)] italic font-normal leading-tight tracking-tight max-w-2xl text-[#1a1a1a]">
+            Get in touch.
+          </h1>
+        </div>
+      </section>
+
+      {/* Divider */}
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-20 items-start">
-          <div>
-            <p className="text-xs font-semibold tracking-[0.3em] uppercase text-black/30 mb-4">
-              Let&apos;s talk
-            </p>
-            <h1 className="font-serif text-5xl md:text-6xl font-medium tracking-tight leading-tight mb-8">
-              Get in touch
-            </h1>
-            <p className="text-base font-light text-black/60 leading-relaxed max-w-sm">
-              Tell us about your team and what you are hoping to achieve. We will get back to you within one business day.
-            </p>
-          </div>
+        <div className="h-px bg-[#6B2737]/25" />
+      </div>
 
-          <div>
-            {state === "success" ? (
-              <div className="border border-black/10 p-10">
-                <p className="text-sm font-semibold mb-2">Message received.</p>
-                <p className="text-sm font-light text-black/60">
-                  Thank you for reaching out. We will be in touch shortly.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <label className="flex flex-col gap-2">
-                    <span className="text-xs font-semibold tracking-widest uppercase text-black/40">
-                      Name
-                    </span>
-                    <input
-                      name="name"
-                      type="text"
-                      required
-                      className="border border-black/15 px-4 py-3 text-sm font-light focus:outline-none focus:border-black transition-colors bg-transparent"
-                      placeholder="Your name"
-                    />
-                  </label>
+      {/* Form */}
+      <section className="bg-[#FAF8F5] py-[120px] md:py-[160px]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-[1fr_2fr] gap-20 items-start">
+            <div>
+              <p className="text-base font-light text-[#1a1a1a]/55 leading-[1.8] max-w-xs">
+                Tell us about your team and what you are hoping to achieve. We will get back to you within one business day.
+              </p>
+            </div>
 
-                  <label className="flex flex-col gap-2">
-                    <span className="text-xs font-semibold tracking-widest uppercase text-black/40">
-                      Company
-                    </span>
-                    <input
-                      name="company"
-                      type="text"
-                      required
-                      className="border border-black/15 px-4 py-3 text-sm font-light focus:outline-none focus:border-black transition-colors bg-transparent"
-                      placeholder="Your company"
-                    />
-                  </label>
-                </div>
-
-                <label className="flex flex-col gap-2">
-                  <span className="text-xs font-semibold tracking-widest uppercase text-black/40">
-                    Email
-                  </span>
-                  <input
-                    name="email"
-                    type="email"
-                    required
-                    className="border border-black/15 px-4 py-3 text-sm font-light focus:outline-none focus:border-black transition-colors bg-transparent"
-                    placeholder="you@company.com"
-                  />
-                </label>
-
-                <label className="flex flex-col gap-2">
-                  <span className="text-xs font-semibold tracking-widest uppercase text-black/40">
-                    Message
-                  </span>
-                  <textarea
-                    name="message"
-                    required
-                    rows={6}
-                    className="border border-black/15 px-4 py-3 text-sm font-light focus:outline-none focus:border-black transition-colors bg-transparent resize-none"
-                    placeholder="Tell us about your team, your workplace, and what you are hoping to achieve."
-                  />
-                </label>
-
-                {state === "error" && (
-                  <p className="text-sm text-black/60 border border-black/15 px-4 py-3">
-                    {errorMsg}
+            <div>
+              {state === "success" ? (
+                <div className="border border-[#6B2737]/25 p-10">
+                  <p className="font-serif text-xl font-normal mb-3 text-[#1a1a1a]">Message received.</p>
+                  <p className="text-sm font-light text-[#1a1a1a]/55 leading-[1.8]">
+                    Thank you for reaching out. We will be in touch shortly.
                   </p>
-                )}
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="flex flex-col gap-7">
+                  <div className="grid md:grid-cols-2 gap-7">
+                    <label className="flex flex-col gap-3">
+                      <span className="text-[10px] font-normal tracking-[0.15em] uppercase text-[#1a1a1a]/40">
+                        Name
+                      </span>
+                      <input
+                        name="name"
+                        type="text"
+                        required
+                        className="border border-[#1a1a1a]/15 px-5 py-4 text-sm font-light focus:outline-none focus:border-[#6B2737] transition-colors bg-transparent text-[#1a1a1a] placeholder:text-[#1a1a1a]/30"
+                        placeholder="Your name"
+                      />
+                    </label>
 
-                <button
-                  type="submit"
-                  disabled={state === "submitting"}
-                  className="bg-black text-white text-sm font-semibold tracking-widest uppercase px-10 py-4 hover:bg-black/80 transition-colors disabled:opacity-40 self-start"
-                >
-                  {state === "submitting" ? "Sending…" : "Send message"}
-                </button>
-              </form>
-            )}
+                    <label className="flex flex-col gap-3">
+                      <span className="text-[10px] font-normal tracking-[0.15em] uppercase text-[#1a1a1a]/40">
+                        Company
+                      </span>
+                      <input
+                        name="company"
+                        type="text"
+                        required
+                        className="border border-[#1a1a1a]/15 px-5 py-4 text-sm font-light focus:outline-none focus:border-[#6B2737] transition-colors bg-transparent text-[#1a1a1a] placeholder:text-[#1a1a1a]/30"
+                        placeholder="Your company"
+                      />
+                    </label>
+                  </div>
+
+                  <label className="flex flex-col gap-3">
+                    <span className="text-[10px] font-normal tracking-[0.15em] uppercase text-[#1a1a1a]/40">
+                      Email
+                    </span>
+                    <input
+                      name="email"
+                      type="email"
+                      required
+                      className="border border-[#1a1a1a]/15 px-5 py-4 text-sm font-light focus:outline-none focus:border-[#6B2737] transition-colors bg-transparent text-[#1a1a1a] placeholder:text-[#1a1a1a]/30"
+                      placeholder="you@company.com"
+                    />
+                  </label>
+
+                  <label className="flex flex-col gap-3">
+                    <span className="text-[10px] font-normal tracking-[0.15em] uppercase text-[#1a1a1a]/40">
+                      Message
+                    </span>
+                    <textarea
+                      name="message"
+                      required
+                      rows={7}
+                      className="border border-[#1a1a1a]/15 px-5 py-4 text-sm font-light focus:outline-none focus:border-[#6B2737] transition-colors bg-transparent resize-none text-[#1a1a1a] placeholder:text-[#1a1a1a]/30"
+                      placeholder="Tell us about your team, your workplace, and what you are hoping to achieve."
+                    />
+                  </label>
+
+                  {state === "error" && (
+                    <p className="text-sm font-light text-[#1a1a1a]/55 border border-[#6B2737]/30 px-5 py-4">
+                      {errorMsg}
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={state === "submitting"}
+                    className="bg-[#6B2737] text-[#FAF8F5] text-xs font-normal uppercase tracking-[0.15em] px-10 py-4 hover:bg-[#5a1f2d] transition-colors disabled:opacity-40 self-start"
+                  >
+                    {state === "submitting" ? "Sending…" : "Send message"}
+                  </button>
+                </form>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }
