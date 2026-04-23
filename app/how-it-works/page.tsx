@@ -65,14 +65,14 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* Image */}
+      {/* Image — different from homepage */}
       <div className="max-w-6xl mx-auto px-6 pb-20 md:pb-28">
         <Image
-          src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1400&q=80"
-          alt="Pilates session in a clean, natural light studio"
+          src="https://images.unsplash.com/photo-TuN68RQ4J1k?auto=format&fit=crop&w=1400&q=80"
+          alt="Minimal editorial pilates movement, clean natural light"
           width={1400}
           height={600}
-          className="object-cover w-full h-[40vw] min-h-[260px] max-h-[500px]"
+          className="object-cover w-full h-[38vw] min-h-[240px] max-h-[480px]"
         />
       </div>
 
@@ -88,7 +88,7 @@ export default function HowItWorksPage() {
             href="/contact"
             className="inline-block bg-black text-white text-xs font-normal uppercase tracking-[0.15em] px-10 py-4 hover:bg-black/75 transition-colors"
           >
-            Let&apos;s have a conversation.
+            Get In Touch
           </Link>
         </div>
       </section>

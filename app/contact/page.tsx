@@ -65,13 +65,10 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-[1fr_2fr] gap-16 md:gap-24 items-start">
             <div>
-              <p className="font-serif text-xl italic font-normal text-black mb-6">
-                Let&apos;s have a conversation.
-              </p>
-              <p className="text-sm font-light text-black/55 leading-[1.8] max-w-xs mb-8">
+              <p className="text-sm font-light text-black/55 leading-[1.8] max-w-xs mb-6">
                 Tell us about your team and your workplace. We will get back to you within one business day.
               </p>
-              <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/35">
+              <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/30">
                 Pricing on request.
               </p>
             </div>

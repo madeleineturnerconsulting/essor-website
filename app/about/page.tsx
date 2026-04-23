@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -9,7 +10,7 @@ export default function AboutPage() {
           <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/35 mb-6">
             Our story
           </p>
-          <h1 className="font-serif text-[clamp(2.8rem,7vw,6rem)] font-normal leading-tight tracking-tight max-w-2xl text-black mb-6">
+          <h1 className="font-serif text-[clamp(2.8rem,7vw,6rem)] font-normal leading-tight tracking-tight max-w-2xl text-black mb-5">
             About ESSOR.
           </h1>
           <p className="font-serif italic text-lg text-black/40 font-normal tracking-wide">
@@ -28,9 +29,16 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-[1fr_2fr] gap-16 md:gap-24 items-start">
             <div className="md:sticky md:top-[88px]">
-              <p className="font-serif text-xl font-normal italic text-black/30 leading-snug">
+              <p className="font-serif text-xl font-normal italic text-black/30 leading-snug mb-10">
                 Movement is the missing variable.
               </p>
+              <Image
+                src="https://images.unsplash.com/photo-AkSJQnem75Y?auto=format&fit=crop&w=700&q=80"
+                alt="Pilates movement in a clean studio, natural light"
+                width={700}
+                height={900}
+                className="object-cover w-full h-[320px] md:h-[400px]"
+              />
             </div>
 
             <div className="space-y-7">
@@ -75,7 +83,7 @@ export default function AboutPage() {
             {[
               { label: "Our mission", value: "Make workplace wellness the norm, not the exception." },
               { label: "Our method", value: "In-house Pilates, designed around your team and your space." },
-              { label: "Our standard", value: "Qualified instructors. Programmes that fit real working weeks." },
+              { label: "Our standard", value: "Qualified teachers. Programmes that fit real working weeks." },
             ].map(({ label, value }) => (
               <div key={label} className="border-t border-black/10 pt-8 group hover:border-black/30 transition-colors">
                 <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/35 mb-4">{label}</p>

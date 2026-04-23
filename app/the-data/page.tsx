@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const absenteeismStats = [
+const supportingStats = [
   {
     number: "6.7",
     unit: "days",
@@ -23,32 +23,19 @@ const absenteeismStats = [
 export default function TheDataPage() {
   return (
     <>
-      {/* Page header */}
-      <section className="bg-white py-20 md:py-28">
+      {/* Stats — first fold, immediately visible */}
+      <section className="bg-white pt-10 pb-16 md:pt-14 md:pb-20">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/35 mb-6">
+          <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/35 mb-8">
             The numbers
           </p>
-          <h1 className="font-serif text-[clamp(2.8rem,7vw,6rem)] font-normal leading-tight tracking-tight max-w-2xl text-black">
-            The data doesn&apos;t lie.
-          </h1>
-        </div>
-      </section>
 
-      {/* Divider */}
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="h-px bg-black/10" />
-      </div>
-
-      {/* Hero stats — $7.5B first, then $4.17B */}
-      <section className="bg-white py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-0">
-            <div className="pb-16 md:pb-0 md:pr-20">
-              <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/35 mb-6">
+            <div className="pb-14 md:pb-0 md:pr-16">
+              <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/35 mb-4">
                 Cost of disengagement
               </p>
-              <p className="font-serif text-[clamp(5rem,13vw,10rem)] font-normal text-black leading-none tracking-tight mb-6 hover:opacity-60 transition-opacity cursor-default">
+              <p className="font-serif text-[clamp(5rem,13vw,9rem)] font-normal text-black leading-none tracking-tight mb-5 hover:opacity-60 transition-opacity cursor-default">
                 $7.5B
               </p>
               <p className="text-sm font-light text-black/55 leading-[1.8] max-w-sm mb-3">
@@ -59,11 +46,11 @@ export default function TheDataPage() {
               </p>
             </div>
 
-            <div className="pt-16 md:pt-0 md:pl-20 border-t md:border-t-0 md:border-l border-black/10">
-              <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/35 mb-6">
+            <div className="pt-14 md:pt-0 md:pl-16 border-t md:border-t-0 md:border-l border-black/10">
+              <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/35 mb-4">
                 Cost of absenteeism · NZ 2024
               </p>
-              <p className="font-serif text-[clamp(5rem,13vw,10rem)] font-normal text-black leading-none tracking-tight mb-6 hover:opacity-60 transition-opacity cursor-default">
+              <p className="font-serif text-[clamp(5rem,13vw,9rem)] font-normal text-black leading-none tracking-tight mb-5 hover:opacity-60 transition-opacity cursor-default">
                 $4.17B
               </p>
               <p className="text-sm font-light text-black/55 leading-[1.8] max-w-sm mb-3">
@@ -83,7 +70,7 @@ export default function TheDataPage() {
       </div>
 
       {/* Context */}
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-white py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl space-y-6 mb-20">
             <p className="text-base font-light text-black/65 leading-[1.8]">
@@ -98,7 +85,7 @@ export default function TheDataPage() {
             Absenteeism in detail
           </p>
           <div className="grid md:grid-cols-3 gap-0">
-            {absenteeismStats.map(({ number, unit, label, source }, i) => (
+            {supportingStats.map(({ number, unit, label, source }, i) => (
               <div
                 key={number}
                 className={`py-10 ${i !== 0 ? "md:pl-12 md:border-l border-t md:border-t-0 border-black/10" : "md:pr-12"}`}
@@ -119,17 +106,17 @@ export default function TheDataPage() {
         </div>
       </section>
 
-      {/* Source note */}
+      {/* Source note + CTA */}
       <div className="max-w-6xl mx-auto px-6 pb-20">
         <div className="h-px bg-black/10 mb-10" />
-        <p className="text-[11px] font-light text-black/30 leading-[1.8] max-w-3xl mb-16">
+        <p className="text-[11px] font-light text-black/30 leading-[1.8] max-w-3xl mb-14">
           Absenteeism statistics sourced from the Southern Cross Health Insurance & BusinessNZ Workplace Wellness Report 2025, which surveyed 111 organisations covering 173,982 employees across NZ private and public sectors. Research conducted March to July 2025 using 2024 calendar year data. Disengagement figure sourced from HRNZ.
         </p>
         <Link
           href="/contact"
           className="inline-block bg-black text-white text-xs font-normal uppercase tracking-[0.15em] px-10 py-4 hover:bg-black/75 transition-colors"
         >
-          Let&apos;s have a conversation.
+          Get In Touch
         </Link>
       </div>
     </>
