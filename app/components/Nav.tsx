@@ -17,11 +17,11 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="border-b border-[#6B2737]/25 bg-[#FAF8F5] sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between">
+    <header className="border-b border-black/10 bg-white sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-6 h-[68px] flex items-center justify-between">
         <Link
           href="/"
-          className="font-serif text-xl tracking-[0.25em] text-[#1a1a1a] font-normal"
+          className="font-serif text-xl tracking-[0.25em] text-black font-normal hover:opacity-60 transition-opacity"
         >
           ESSOR
         </Link>
@@ -31,10 +31,10 @@ export default function Nav() {
             <Link
               key={href}
               href={href}
-              className={`text-xs font-light uppercase tracking-[0.15em] transition-colors ${
+              className={`text-xs font-light uppercase tracking-[0.15em] transition-all ${
                 pathname === href
-                  ? "text-[#6B2737]"
-                  : "text-[#1a1a1a]/45 hover:text-[#1a1a1a]"
+                  ? "text-black border-b border-black pb-px"
+                  : "text-black/40 hover:text-black"
               }`}
             >
               {label}
@@ -43,7 +43,7 @@ export default function Nav() {
         </nav>
 
         <button
-          className="md:hidden text-[#6B2737]"
+          className="md:hidden text-black hover:opacity-60 transition-opacity"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -52,15 +52,15 @@ export default function Nav() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-[#6B2737]/25 bg-[#FAF8F5]">
+        <div className="md:hidden border-t border-black/10 bg-white">
           <nav className="max-w-6xl mx-auto px-6 py-8 flex flex-col gap-6">
             {links.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                className={`text-xs font-light uppercase tracking-[0.15em] ${
-                  pathname === href ? "text-[#6B2737]" : "text-[#1a1a1a]/45"
+                className={`text-xs font-light uppercase tracking-[0.15em] transition-colors ${
+                  pathname === href ? "text-black" : "text-black/40"
                 }`}
               >
                 {label}
