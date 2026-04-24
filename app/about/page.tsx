@@ -14,7 +14,7 @@ export default function AboutPage() {
             About ESSOR.
           </h1>
           <p className="font-serif italic text-lg text-black/40 font-normal tracking-wide">
-            ESSOR — to flourish, to take flight, to grow rapidly.
+            ESSOR: to flourish, to take flight, to grow rapidly.
           </p>
         </div>
       </section>
@@ -33,8 +33,8 @@ export default function AboutPage() {
                 Movement is the missing variable.
               </p>
               <Image
-                src="https://images.unsplash.com/photo-AkSJQnem75Y?auto=format&fit=crop&w=700&q=80"
-                alt="Pilates movement in a clean studio, natural light"
+                src="https://images.unsplash.com/photo-7FjFDyJOv4s?auto=format&fit=crop&w=700&q=80"
+                alt="Movement and form, minimal editorial wellness photography"
                 width={700}
                 height={900}
                 className="object-cover w-full h-[320px] md:h-[400px]"

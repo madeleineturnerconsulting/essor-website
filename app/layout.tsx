@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Poppins, Cormorant_Garamond } from "next/font/google";
+import { Outfit, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
 
-const poppins = Poppins({
+const outfit = Outfit({
   weight: ["300", "400", "500", "600"],
   subsets: ["latin"],
-  variable: "--font-poppins",
+  variable: "--font-outfit",
 });
 
-const cormorant = Cormorant_Garamond({
-  weight: ["300", "400", "500", "600"],
+const playfair = Playfair_Display({
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-display",
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${cormorant.variable} h-full antialiased`}>
+    <html lang="en" className={`${outfit.variable} ${playfair.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white">
         <Nav />
         <main className="flex-1">{children}</main>

@@ -23,7 +23,7 @@ export default function HowItWorksPage() {
   return (
     <>
       {/* Page header */}
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-white py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/35 mb-6">
             Getting started
@@ -40,13 +40,13 @@ export default function HowItWorksPage() {
       </div>
 
       {/* Steps */}
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-white py-12 md:py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col">
             {steps.map(({ number, title, body }, i) => (
               <div
                 key={number}
-                className={`grid md:grid-cols-[100px_1fr] gap-6 md:gap-16 py-14 ${
+                className={`grid md:grid-cols-[100px_1fr] gap-6 md:gap-16 py-10 ${
                   i !== steps.length - 1 ? "border-b border-black/8" : ""
                 }`}
               >
@@ -65,14 +65,14 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* Image — different from homepage */}
-      <div className="max-w-6xl mx-auto px-6 pb-20 md:pb-28">
+      {/* Image */}
+      <div className="max-w-6xl mx-auto px-6 pb-14 md:pb-20">
         <Image
-          src="https://images.unsplash.com/photo-TuN68RQ4J1k?auto=format&fit=crop&w=1400&q=80"
-          alt="Minimal editorial pilates movement, clean natural light"
+          src="https://images.unsplash.com/photo-OK7_RBq0VHI?auto=format&fit=crop&w=1400&q=80"
+          alt="Minimal wellness movement, clean natural light"
           width={1400}
           height={600}
-          className="object-cover w-full h-[38vw] min-h-[240px] max-h-[480px]"
+          className="object-cover w-full h-[38vw] min-h-[220px] max-h-[440px]"
         />
       </div>
 
@@ -82,7 +82,7 @@ export default function HowItWorksPage() {
       </div>
 
       {/* CTA */}
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-white py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
           <Link
             href="/contact"

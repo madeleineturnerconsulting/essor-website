@@ -71,8 +71,8 @@ export default function HomePage() {
             {/* Image — desktop */}
             <div className="hidden md:block w-[320px] lg:w-[380px] flex-shrink-0">
               <Image
-                src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80"
-                alt="Editorial pilates pose in a minimal studio"
+                src="https://images.unsplash.com/photo-u0BmvZujmwg?auto=format&fit=crop&w=800&q=80"
+                alt="Editorial wellness portrait, clean minimal setting"
                 width={380}
                 height={520}
                 className="object-cover w-full h-[460px] lg:h-[520px]"
@@ -84,8 +84,8 @@ export default function HomePage() {
           {/* Image — mobile */}
           <div className="mt-8 md:hidden">
             <Image
-              src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80"
-              alt="Editorial pilates pose in a minimal studio"
+              src="https://images.unsplash.com/photo-u0BmvZujmwg?auto=format&fit=crop&w=800&q=80"
+              alt="Editorial wellness portrait, clean minimal setting"
               width={800}
               height={480}
               className="object-cover w-full h-60"
@@ -148,17 +148,17 @@ export default function HomePage() {
       {/* At a glance — infographic grid */}
       <section className="bg-white py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/35 mb-14">
+          <p className="text-xs font-normal uppercase tracking-[0.15em] text-black/40 mb-12">
             At a glance
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-14">
             {atAGlance.map(({ icon: Icon, label, value }) => (
-              <div key={label} className="flex flex-col gap-3">
-                <Icon size={18} strokeWidth={1} className="text-black/40" />
-                <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-black">
+              <div key={label} className="flex flex-col gap-4">
+                <Icon size={20} strokeWidth={1} className="text-black/50" />
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-black">
                   {label}
                 </p>
-                <p className="text-sm font-light text-black/55 leading-[1.7]">
+                <p className="text-sm font-light text-black/55 leading-[1.7] mt-1">
                   {value}
                 </p>
               </div>
