@@ -3,94 +3,150 @@ import Image from "next/image";
 
 const steps = [
   {
-    number: "01",
-    title: "We Tailor A Plan for You",
-    body: "Based on your team size, and available space, we design a session schedule that fits your working week. We sort the logistics so you don't have to.",
+    n: "I",
+    title: "A conversation",
+    desc: "We begin with a 20-minute call. We learn the shape of your team, your space, and what you would like Pilates to do for them.",
+    meta: "20 MINUTES · VIDEO OR IN PERSON",
   },
   {
-    number: "02",
-    title: "We Come to You",
-    body: "Your teacher arrives at your office ready to go. No equipment hire, no venue booking, no commute for your team. Pilates happens in your space, on your time.",
+    n: "II",
+    title: "A tailored proposal",
+    desc: "Within two working days, we send a written proposal covering session length, frequency, capacity, and pricing, designed for the rhythm of your workplace.",
+    meta: "DELIVERED BY EMAIL · TWO WORKING DAYS",
   },
   {
-    number: "03",
-    title: "Your Team Moves",
-    body: "Sessions run for 45 to 60 minutes. Suitable for all fitness levels, no experience needed. We guide your people through every movement, whether it is their first class or their fiftieth.",
+    n: "III",
+    title: "A first session",
+    desc: "Your teacher arrives 15 minutes early. Mats are laid out. Lights are dimmed. The team gathers. We move, breathe, and reset together.",
+    meta: "30, 45 OR 60 MINUTES · ON SITE OR VIRTUAL",
   },
+  {
+    n: "IV",
+    title: "An ongoing rhythm",
+    desc: "Most teams settle into a weekly or fortnightly cadence. We refine the practice as your needs change, with modifications for pre-natal, injury, and seasonal pacing.",
+    meta: "WEEKLY · FORTNIGHTLY · MONTHLY",
+  },
+];
+
+const weBring = [
+  "A fully qualified Mat Pilates teacher",
+  "Pre- and postnatal certified",
+  "Mats provided on request",
+  "Music, where appropriate",
+  "Modifications for every level",
+  "Insurance and full compliance",
+];
+
+const youBring = [
+  "A clear, quiet space — boardroom, breakout, foyer",
+  "Roughly 2.5m² per participant",
+  "A nominated point of contact",
+  "Comfortable clothing, no shoes required",
+  "An open mind",
+  "(Mats, if you have them — we will bring the rest)",
 ];
 
 export default function HowItWorksPage() {
   return (
     <>
-      {/* Page header */}
-      <section className="bg-white py-14 md:py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/35 mb-6">
-            Getting started
-          </p>
-          <h1 className="font-serif text-[clamp(2.8rem,7vw,6rem)] font-normal leading-tight tracking-tight max-w-2xl text-black">
-            How it works.
+      {/* ── Page hero ───────────────────────────────────────── */}
+      <section className="px-14 pt-[120px] pb-[80px] grid md:grid-cols-2 gap-24 items-end">
+        <div>
+          <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
+            How it works
+          </div>
+          <h1 className="font-serif font-light text-[clamp(52px,7.5vw,96px)] leading-none tracking-[-0.02em]">
+            From first<br />conversation<br />to <em className="italic">first session.</em>
           </h1>
         </div>
+        <p className="font-sans text-[17px] leading-[1.65] text-ink-soft max-w-[480px] md:pb-4">
+          A considered, four-step process designed to fit around the cadence of
+          your team and the dimensions of your workplace. No machinery, no fuss.
+          Just a teacher, a mat, and the better part of an hour.
+        </p>
       </section>
 
-      {/* Divider */}
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="h-px bg-black/10" />
-      </div>
+      {/* ── Image ───────────────────────────────────────────── */}
+      <section className="px-14 pb-[100px]">
+        <div className="relative h-[520px] bw-photo">
+          <Image
+            src="https://images.pexels.com/photos/4325446/pexels-photo-4325446.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            alt="In-house mat Pilates, boardroom conversion"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="font-mono text-[10px] tracking-[0.18em] text-ink-mute mt-3">
+          FIG. I — IN-HOUSE, BOARDROOM CONVERSION
+        </div>
+      </section>
 
-      {/* Steps */}
-      <section className="bg-white py-12 md:py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col">
-            {steps.map(({ number, title, body }, i) => (
-              <div
-                key={number}
-                className={`grid md:grid-cols-[100px_1fr] gap-6 md:gap-16 py-10 ${
-                  i !== steps.length - 1 ? "border-b border-black/8" : ""
-                }`}
-              >
-                <span className="font-serif text-4xl font-normal text-black/15 leading-none tabular-nums">
-                  {number}
-                </span>
-                <div>
-                  <h2 className="font-serif text-2xl font-normal mb-4 text-black">{title}</h2>
-                  <p className="text-sm font-light text-black/55 leading-[1.8] max-w-xl">
-                    {body}
-                  </p>
-                </div>
+      {/* ── Four steps ──────────────────────────────────────── */}
+      <section className="px-14 pb-[140px]">
+        <div className="border-t border-ink">
+          {steps.map(({ n, title, desc, meta }) => (
+            <div
+              key={n}
+              className="grid grid-cols-[60px_1fr] md:grid-cols-[120px_1fr_280px] gap-8 md:gap-14 py-14 border-b border-rule items-start"
+            >
+              <div className="font-serif italic text-[64px] text-accent leading-none font-light">{n}</div>
+              <div>
+                <h3 className="font-serif text-[36px] font-normal mb-4">{title}</h3>
+                <p className="font-sans text-[16px] text-ink-soft leading-[1.65] max-w-[560px]">{desc}</p>
               </div>
-            ))}
-          </div>
+              <div className="hidden md:block font-mono text-[10px] tracking-[0.18em] text-ink-mute pt-4">
+                — {meta}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Image */}
-      <div className="max-w-6xl mx-auto px-6 pb-14 md:pb-20">
-        <Image
-          src="https://images.pexels.com/photos/31509822/pexels-photo-31509822.jpeg?auto=compress&cs=tinysrgb&w=1400&q=80"
-          alt="Woman performing Pilates on a reformer machine in a minimalist studio"
-          width={1400}
-          height={600}
-          className="object-cover w-full h-[38vw] min-h-[220px] max-h-[440px]"
-        />
-      </div>
-
-      {/* Divider */}
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="h-px bg-black/10" />
-      </div>
-
-      {/* CTA */}
-      <section className="bg-white py-14 md:py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <Link
-            href="/contact"
-            className="inline-block bg-black text-white text-xs font-normal uppercase tracking-[0.15em] px-10 py-4 hover:bg-black/75 transition-colors"
-          >
-            Get In Touch
-          </Link>
+      {/* ── What we bring / What you bring ──────────────────── */}
+      <section className="bg-paper-deep px-14 py-[120px] grid md:grid-cols-2 gap-20">
+        <div>
+          <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6">
+            — What we bring
+          </div>
+          <ul className="m-0 p-0 list-none">
+            {weBring.map((item) => (
+              <li
+                key={item}
+                className="font-serif text-[22px] font-normal py-4 border-b border-rule"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
+        <div>
+          <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6">
+            — What you bring
+          </div>
+          <ul className="m-0 p-0 list-none">
+            {youBring.map((item) => (
+              <li
+                key={item}
+                className="font-serif text-[22px] font-normal py-4 border-b border-rule"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ── CTA ─────────────────────────────────────────────── */}
+      <section className="px-14 py-[140px] text-center">
+        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-none tracking-[-0.02em] max-w-[800px] mx-auto mb-12">
+          Begin with a <em className="italic">conversation.</em>
+        </h2>
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-paper font-mono text-[12px] tracking-[0.18em] uppercase hover:bg-ink-soft transition-colors"
+        >
+          Book a discovery call &nbsp;→
+        </Link>
       </section>
     </>
   );

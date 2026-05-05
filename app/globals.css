@@ -1,25 +1,73 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #111111;
+  --paper:      #F2EDE4;
+  --paper-deep: #E8E0D0;
+  --ink:        #1A1714;
+  --ink-soft:   #3A3631;
+  --ink-mute:   #8C857A;
+  --rule:       #C7BCAA;
+  --accent:     #697264;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-serif: var(--font-display);
-  --font-sans: var(--font-outfit);
+  --color-paper:      var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-ink:        var(--ink);
+  --color-ink-soft:   var(--ink-soft);
+  --color-ink-mute:   var(--ink-mute);
+  --color-rule:       var(--rule);
+  --color-accent:     var(--accent);
+  --font-serif: var(--font-cormorant);
+  --font-sans:  var(--font-inter-tight);
+  --font-mono:  var(--font-jetbrains);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-outfit), Arial, sans-serif;
-  font-weight: 300;
-  line-height: 1.8;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-inter-tight), "Inter", system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 * {
   border-radius: 0 !important;
+  box-sizing: border-box;
 }
+
+p { margin: 0; }
+h1, h2, h3, h4 { margin: 0; font-weight: inherit; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* B&W filter — applied to all photography */
+.bw-photo {
+  filter: grayscale(1) contrast(1.03);
+}
+
+/* Underline-style field focus */
+.field-underline {
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-family: var(--font-inter-tight), system-ui, sans-serif;
+  font-size: 16px;
+  color: var(--ink);
+  padding: 12px 0;
+  transition: border-color 150ms;
+}
+.field-underline:focus {
+  border-bottom-color: var(--ink);
+}
+.field-underline::placeholder {
+  color: var(--ink-mute);
+}
+
+/* FAQ accordion */
+details summary { list-style: none; }
+details summary::-webkit-details-marker { display: none; }

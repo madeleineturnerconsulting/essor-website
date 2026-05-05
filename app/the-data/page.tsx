@@ -1,148 +1,203 @@
 import Link from "next/link";
+import Image from "next/image";
 
-const supportingStats = [
+const bigStats = [
   {
-    number: "6.7",
-    unit: "days",
-    label: "Average days lost per employee in 2024, a record high, up from 5.5 days in 2022",
-    source: "Southern Cross & BusinessNZ, 2025",
+    n: "$4.17", u: "B",
+    label: "Lost to absenteeism in NZ in 2024",
+    source: "SOURCE: BUSINESSNZ WELLBEING REPORT",
   },
   {
-    number: "$1,319",
-    label: "Median annual cost of absence per employee in 2024, up from $1,235 in 2022",
-    source: "Southern Cross & BusinessNZ, 2025",
+    n: "$7.50", u: "B",
+    label: "Lost to disengagement in NZ in 2024",
+    source: "SOURCE: GALLUP, STATE OF THE WORKPLACE",
   },
-  {
-    number: "13M",
-    unit: "days",
-    label: "Working days lost across New Zealand in 2024, up from 10 million in 2022",
-    source: "Southern Cross & BusinessNZ, 2025",
-  },
+];
+
+const gridStats = [
+  ["73%",    "of NZ workers report regular back, neck or shoulder pain"],
+  ["6.6",    "average sick days per worker per year, NZ 2024"],
+  ["1 in 4", "knowledge workers report burnout in the past 12 months"],
+  ["$1.4k",  "average ACC claim, work-related musculoskeletal injury"],
+  ["62%",    "say wellness benefits affect whether they stay at a job"],
+  ["3×",     "more productive after 30 minutes of mid-day movement"],
+  ["48%",    "lower turnover at companies with structured wellness"],
+  ["£5.30",  "returned per £1 spent on workplace wellbeing — Deloitte UK"],
+];
+
+const roiBars = [
+  { label: "Cost of doing nothing · per worker per year",       ratio: 1,    txt: "$2,800", strong: false },
+  { label: "Investment · quarterly Pilates programme",           ratio: 0.36, txt: "$1,000", strong: false },
+  { label: "Estimated return · reduced absenteeism + retention", ratio: 1.6,  txt: "$4,500", strong: true  },
 ];
 
 export default function TheDataPage() {
   return (
     <>
-      {/* Page header + primary stats — all first fold */}
-      <section className="bg-white pt-10 pb-16 md:pt-14 md:pb-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/35 mb-6">
-            The numbers
-          </p>
-          <h1 className="font-serif text-[clamp(2.8rem,7vw,6rem)] font-normal leading-tight tracking-tight max-w-3xl text-black mb-16 md:mb-20">
-            The cost of an unwell workforce.
-          </h1>
-
-          <div className="grid md:grid-cols-2 gap-0">
-            {/* Disengagement */}
-            <div className="pb-14 md:pb-0 md:pr-16">
-              <p className="text-xs font-normal uppercase tracking-[0.15em] text-black/40 mb-5">
-                Cost of disengagement
-              </p>
-              <p className="font-serif text-[clamp(5rem,13vw,9rem)] font-normal text-black leading-none tracking-tight mb-6 hover:opacity-60 transition-opacity cursor-default">
-                <span className="font-sans">$</span>7.5B
-              </p>
-              <p className="text-sm font-light text-black/55 leading-[1.8] max-w-sm mb-4">
-                The cost to NZ businesses of employees showing up but not performing. Presenteeism, low productivity, higher turnover. Physically present, mentally absent.
-              </p>
-              <p className="text-[10px] font-normal tracking-[0.12em] uppercase text-black/25">
-                HRNZ
-              </p>
-            </div>
-
-            {/* Absenteeism */}
-            <div className="pt-14 md:pt-0 md:pl-16 border-t md:border-t-0 md:border-l border-black/10">
-              <p className="text-xs font-normal uppercase tracking-[0.15em] text-black/40 mb-5">
-                Cost of absenteeism, NZ 2024
-              </p>
-              <p className="font-serif text-[clamp(5rem,13vw,9rem)] font-normal text-black leading-none tracking-tight mb-6 hover:opacity-60 transition-opacity cursor-default">
-                <span className="font-sans">$</span>4.17B
-              </p>
-              <p className="text-sm font-light text-black/55 leading-[1.8] max-w-sm mb-4">
-                The highest figure ever recorded. Sick days, mental health leave, and the rising cost of an unwell workforce.
-              </p>
-              <p className="text-[10px] font-normal tracking-[0.12em] uppercase text-black/25">
-                Southern Cross & BusinessNZ, 2025
-              </p>
-            </div>
-          </div>
+      {/* ── Hero — type only ─────────────────────────────────── */}
+      <section className="px-14 pt-[120px] pb-[80px] text-center">
+        <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
+          The data
         </div>
+        <h1 className="font-serif font-light text-[clamp(44px,7.5vw,96px)] leading-none tracking-[-0.02em] max-w-[1100px] mx-auto mb-10">
+          The cost of doing nothing<br />
+          is no longer <em className="italic">abstract.</em>
+        </h1>
+        <p className="font-sans text-[17px] leading-[1.65] text-ink-soft max-w-[600px] mx-auto">
+          A short reading of the New Zealand workplace, drawn from public
+          sources and our own conversations with HR teams across Auckland.
+        </p>
       </section>
 
-      {/* Divider */}
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="h-px bg-black/10" />
-      </div>
-
-      {/* Context */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-[1fr_2fr] gap-16 md:gap-24 items-start">
-            <div>
-              <p className="font-serif text-xl font-normal italic text-black/30 leading-snug">
-                Regular movement during the workday is one of the most effective and accessible ways to change that.
-              </p>
-            </div>
-            <div className="space-y-5">
-              <p className="text-base font-light text-black/65 leading-[1.8]">
-                Absenteeism cost New Zealand businesses $4.17 billion in 2024, the highest figure ever recorded, according to the Southern Cross Health Insurance and BusinessNZ Workplace Wellness Report. The average employee missed 6.7 days of work, up from 5.5 days in 2022. Sedentary work environments, chronic stress, and poor physical health are driving people out of their chairs and onto sick leave, often before anyone sees it coming.
-              </p>
-              <p className="text-base font-light text-black/65 leading-[1.8]">
-                Pilates is not just a wellness trend. It is a proven intervention that targets the exact problems desk workers face: tight hips, a weak core, poor posture, shallow breathing, and high stress. When people feel better in their bodies, they show up differently at work.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="h-px bg-black/10" />
-      </div>
-
-      {/* Absenteeism detail stats */}
-      <section className="bg-white py-16 md:py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="text-xs font-normal uppercase tracking-[0.15em] text-black/40 mb-12">
-            Absenteeism in detail
-          </p>
-          <div className="grid md:grid-cols-3 gap-0">
-            {supportingStats.map(({ number, unit, label, source }, i) => (
-              <div
-                key={number}
-                className={`py-10 ${i !== 0 ? "md:pl-12 md:border-l border-t md:border-t-0 border-black/10" : "md:pr-12"}`}
-              >
-                <p className="font-serif text-[clamp(3rem,6vw,5rem)] font-normal text-black leading-none tracking-tight mb-2 hover:opacity-60 transition-opacity cursor-default">
-                  {number.startsWith("$") ? (
-                    <><span className="font-sans">$</span>{number.slice(1)}</>
-                  ) : number}
-                </p>
-                {unit && (
-                  <p className="text-xs font-normal uppercase tracking-[0.15em] text-black/35 mb-4">
-                    {unit}
-                  </p>
-                )}
-                <p className="text-sm font-light text-black/55 leading-[1.8] mb-3">{label}</p>
-                <p className="text-[10px] font-normal tracking-[0.1em] uppercase text-black/25">{source}</p>
+      {/* ── Two big numbers ──────────────────────────────────── */}
+      <section className="px-14 pb-[80px]">
+        <div
+          className="grid md:grid-cols-2"
+          style={{ borderTop: "1px solid var(--ink)", borderBottom: "1px solid var(--ink)" }}
+        >
+          {bigStats.map(({ n, u, label, source }, i) => (
+            <div
+              key={label}
+              className="px-12 py-20 text-center"
+              style={{ borderRight: i === 0 ? "1px solid var(--ink)" : "none" }}
+            >
+              <div className="flex justify-center items-baseline gap-1.5 mb-4">
+                <span className="font-serif font-light text-[clamp(80px,14vw,180px)] leading-none tracking-[-0.04em]">
+                  {n}
+                </span>
+                <span className="font-serif italic font-light text-[clamp(36px,5vw,64px)] text-accent">
+                  {u}
+                </span>
               </div>
-            ))}
-          </div>
+              <p className="font-serif text-[24px] font-normal max-w-[360px] mx-auto mb-6">
+                {label}
+              </p>
+              <div className="font-mono text-[10px] tracking-[0.18em] text-ink-mute">
+                — {source}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Source note + CTA */}
-      <div className="max-w-6xl mx-auto px-6 pb-20 md:pb-24">
-        <div className="h-px bg-black/10 mb-10" />
-        <p className="text-[11px] font-light text-black/30 leading-[1.8] max-w-3xl mb-14">
-          Absenteeism statistics sourced from the Southern Cross Health Insurance & BusinessNZ Workplace Wellness Report 2025, which surveyed 111 organisations covering 173,982 employees across NZ private and public sectors. Research conducted March to July 2025 using 2024 calendar year data. Disengagement figure sourced from HRNZ.
+      {/* ── Context + image ──────────────────────────────────── */}
+      <section className="px-14 py-[120px] grid md:grid-cols-[1fr_1.2fr] gap-20 items-center">
+        <div className="relative h-[540px] bw-photo">
+          <Image
+            src="https://images.pexels.com/photos/4056723/pexels-photo-4056723.jpeg?auto=compress&cs=tinysrgb&w=900"
+            alt="Mat Pilates practice"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div>
+          <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6">
+            — Reading the numbers
+          </div>
+          <p className="font-serif italic font-light text-[36px] leading-[1.25] mb-6">
+            Together, that&apos;s{" "}
+            <span className="text-accent">$11.67 billion</span> a year, roughly
+            3.6% of New Zealand&apos;s GDP, quietly leaving the economy through
+            tired, disengaged, sore people.
+          </p>
+          <p className="font-sans text-[15px] leading-[1.7] text-ink-soft">
+            The numbers behind absenteeism and presenteeism are easy to glaze
+            past. Read slowly. They describe a country where movement, rest,
+            and care are quietly in deficit, and where a small, consistent
+            intervention pays back many times over.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Stats grid ───────────────────────────────────────── */}
+      <section className="px-14 pb-[120px]">
+        <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
+          § The fuller picture
+        </div>
+        <div
+          className="grid grid-cols-2 md:grid-cols-4"
+          style={{ borderTop: "1px solid var(--ink)", borderBottom: "1px solid var(--ink)" }}
+        >
+          {gridStats.map(([n, label], i) => {
+            const col = i % 4;
+            const row = Math.floor(i / 4);
+            return (
+              <div
+                key={label}
+                className="p-7 min-h-[200px]"
+                style={{
+                  borderRight: col !== 3 ? "1px solid var(--rule)" : "none",
+                  borderBottom: row === 0 ? "1px solid var(--rule)" : "none",
+                }}
+              >
+                <div className="font-serif font-light text-[56px] leading-none text-accent mb-4">
+                  {n}
+                </div>
+                <p className="font-sans text-[13px] text-ink-soft leading-[1.55]">{label}</p>
+              </div>
+            );
+          })}
+        </div>
+        <div className="font-mono text-[10px] tracking-[0.18em] text-ink-mute mt-4">
+          — SOURCES: BUSINESSNZ, STATS NZ, ACC, GALLUP, DELOITTE (2023–24)
+        </div>
+      </section>
+
+      {/* ── ROI comparison ───────────────────────────────────── */}
+      <section className="bg-paper-deep px-14 py-[120px]">
+        <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6 text-center">
+          § Return on movement
+        </div>
+        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-[1.05] tracking-[-0.02em] text-center max-w-[980px] mx-auto mb-20">
+          For every dollar spent on workplace wellbeing,{" "}
+          <em className="italic">studies suggest</em> a return of three to five.
+        </h2>
+
+        <div className="max-w-[1000px] mx-auto">
+          {roiBars.map(({ label, ratio, txt, strong }, i) => (
+            <div
+              key={label}
+              className="grid grid-cols-[1fr_1fr_80px] md:grid-cols-[1fr_480px_80px] gap-8 items-center py-5"
+              style={{ borderBottom: i < 2 ? "1px solid var(--rule)" : "none" }}
+            >
+              <span className="font-sans text-[14px] text-ink-soft">{label}</span>
+              <div className="relative h-8">
+                <div className="absolute left-0 right-0 top-1/2 h-px bg-rule" />
+                <div
+                  className="absolute top-0 bottom-0 left-0"
+                  style={{
+                    width: `${(ratio / 1.6) * 100}%`,
+                    background: strong ? "var(--ink)" : "var(--accent)",
+                    opacity: strong ? 1 : 0.55,
+                  }}
+                />
+              </div>
+              <span
+                className="font-serif text-[22px] text-right"
+                style={{ color: strong ? "var(--ink)" : "var(--ink-soft)" }}
+              >
+                {txt}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── CTA ─────────────────────────────────────────────── */}
+      <section className="px-14 py-[140px] text-center">
+        <h2 className="font-serif font-light text-[clamp(36px,5.6vw,72px)] leading-none tracking-[-0.02em] max-w-[900px] mx-auto mb-8">
+          The case has been<br />made for you.
+        </h2>
+        <p className="font-sans text-[16px] text-ink-soft max-w-[540px] mx-auto mb-12">
+          ESSOR makes the next step simple.
         </p>
         <Link
           href="/contact"
-          className="inline-block bg-black text-white text-xs font-normal uppercase tracking-[0.15em] px-10 py-4 hover:bg-black/75 transition-colors"
+          className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-paper font-mono text-[12px] tracking-[0.18em] uppercase hover:bg-ink-soft transition-colors"
         >
-          Get In Touch
+          Get in touch &nbsp;→
         </Link>
-      </div>
+      </section>
     </>
   );
 }
