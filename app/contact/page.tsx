@@ -30,7 +30,7 @@ function Field({
         <textarea
           name={name}
           placeholder={placeholder}
-          rows={3}
+          rows={4}
           required={required}
           className="field-underline resize-none"
           style={{ borderBottom: "none" }}
@@ -62,14 +62,6 @@ export default function ContactPage() {
     const get = (n: string) =>
       (form.elements.namedItem(n) as HTMLInputElement | HTMLTextAreaElement)?.value ?? "";
 
-    const message = [
-      `Role: ${get("role")}`,
-      `Team size: ${get("team_size")}`,
-      `Location: ${get("location")}`,
-      "",
-      get("brief"),
-    ].join("\n");
-
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -78,7 +70,7 @@ export default function ContactPage() {
           name: get("name"),
           company: get("company"),
           email: get("email"),
-          message,
+          message: get("message"),
         }),
       });
       if (!res.ok) {
@@ -103,24 +95,21 @@ export default function ContactPage() {
             Contact
           </div>
           <h1 className="font-serif font-light text-[clamp(44px,6.25vw,80px)] leading-none tracking-[-0.02em] mb-10">
-            Send a <em className="italic">brief.</em><br />
-            We&apos;ll reply<br />within two<br />working days.
+            Get in <em className="italic">touch.</em>
           </h1>
+          <p className="font-sans text-[16px] leading-[1.7] text-ink-soft max-w-[460px] mb-4">
+            Tell us about your team and your workplace. We will get back to you
+            within one business day.
+          </p>
           <p className="font-sans text-[16px] leading-[1.7] text-ink-soft max-w-[460px] mb-12">
-            Tell us a little about your team, your space, and the rhythm you
-            have in mind. A few sentences is plenty. We&apos;ll come back with a
-            tailored proposal.
+            Pricing on request.
           </p>
           <div className="border-t border-ink pt-8">
             <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-ink-mute mb-4">
               Or reach us directly
             </div>
-            <div className="font-serif text-[28px] font-light tracking-[-0.01em] mb-2">
+            <div className="font-serif text-[28px] font-light tracking-[-0.01em]">
               hello@essor.co.nz
-            </div>
-            <div className="font-sans text-[14px] text-ink-soft">+64 · 21 000 0000</div>
-            <div className="font-sans text-[14px] text-ink-soft mt-6 leading-relaxed">
-              Studio, by appointment<br />Ponsonby · Auckland 1011
             </div>
           </div>
         </div>
@@ -136,17 +125,12 @@ export default function ContactPage() {
           ) : (
             <form onSubmit={handleSubmit} className="border-t border-ink">
               <div className="grid grid-cols-2 gap-6">
-                <Field label="01 · YOUR NAME" name="name"      placeholder="Jane Doe"          required />
-                <Field label="02 · ROLE"       name="role"      placeholder="People & Culture"  />
+                <Field label="01 · YOUR NAME" name="name"    placeholder="Jane Doe"          required />
+                <Field label="02 · COMPANY"   name="company" placeholder="Company name"      required />
               </div>
-              <div className="grid grid-cols-2 gap-6">
-                <Field label="03 · COMPANY"    name="company"   placeholder="Company name"      required />
-                <Field label="04 · TEAM SIZE"  name="team_size" placeholder="e.g. 18"           />
-              </div>
-              <Field label="05 · EMAIL"        name="email"     placeholder="jane@company.co.nz" type="email" required />
-              <Field label="06 · LOCATION"     name="location"  placeholder="Auckland CBD, Wynyard, virtual…" />
-              <Field label="07 · WHAT YOU HAVE IN MIND" name="brief"
-                     placeholder="A weekly 45-minute mat session for our design team…"
+              <Field label="03 · EMAIL"   name="email"   placeholder="jane@company.co.nz" type="email" required />
+              <Field label="04 · MESSAGE" name="message"
+                     placeholder="Tell us about your team and your workplace."
                      textarea required />
 
               {state === "error" && (
@@ -157,14 +141,14 @@ export default function ContactPage() {
 
               <div className="flex justify-between items-center pt-8">
                 <span className="font-mono text-[10px] tracking-[0.18em] text-ink-mute">
-                  REPLY · WITHIN 2 WORKING DAYS
+                  REPLY · WITHIN 1 BUSINESS DAY
                 </span>
                 <button
                   type="submit"
                   disabled={state === "submitting"}
                   className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-paper font-mono text-[12px] tracking-[0.18em] uppercase hover:bg-ink-soft transition-colors disabled:opacity-40"
                 >
-                  {state === "submitting" ? "Sending…" : "Send brief →"}
+                  {state === "submitting" ? "Sending…" : "Send →"}
                 </button>
               </div>
             </form>

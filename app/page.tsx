@@ -14,12 +14,12 @@ const atAGlance = [
 ];
 
 const caseItems = [
-  ["Reduces physical pain",   "Addresses musculoskeletal issues caused by prolonged sitting, including back pain, tight hips and neck tension."],
-  ["Lowers stress",           "Breath-focused movement activates the parasympathetic nervous system. Lower anxiety, better focus."],
-  ["Builds team culture",     "Shared experiences create connection. A weekly session gives teams a reason to gather and move."],
-  ["Improves focus",          "Movement increases blood flow to the brain. More productive, better at problem-solving."],
-  ["Signals that you care",   "Offering wellness tells people: this company invests in us. Reduces turnover, attracts talent."],
-  ["Reduces injury risk",     "Builds the strength and mobility that prevents the chronic injuries desk workers are prone to."],
+  ["Reduces Physical Pain",        "Pilates directly addresses musculoskeletal issues caused by prolonged sitting, including lower back pain, tight hips, and neck tension. Fewer aches means fewer sick days."],
+  ["Lowers Stress",                "Breath-focused movement activates the parasympathetic nervous system, the body's rest and recovery mode. Employees who move regularly report lower anxiety and better focus."],
+  ["Builds Team Culture",          "Shared experiences create connection. A weekly session gives teams a reason to get together, laugh, and move outside of a meeting room. Culture is built in moments like these."],
+  ["Improves Focus and Productivity", "Physical movement increases blood flow to the brain. Studies consistently show that employees who exercise during the workday are more productive and better at problem-solving in the afternoon."],
+  ["Signals That You Care",        "Offering wellness as a benefit tells your people something important: this company invests in us. That kind of message reduces turnover and attracts talent."],
+  ["Reduces Injury Risk",          "Pilates builds the strength and mobility that prevents the chronic injuries desk workers are prone to. Fewer injuries means fewer ACC claims, less time off, and lower long-term costs for the business."],
 ];
 
 export default function HomePage() {
@@ -41,7 +41,7 @@ export default function HomePage() {
               at work.
             </h1>
             <p className="font-sans text-[17px] leading-[1.65] text-ink-soft max-w-[460px] mb-14">
-              ESSOR brings in-house Pilates to New Zealand workplaces. Reducing
+              ESSOR brings in-house Pilates to New Zealand workplaces, reducing
               absenteeism, easing stress, and building the kind of culture that
               keeps people around.
             </p>
@@ -232,8 +232,7 @@ export default function HomePage() {
         <div>
           <p className="font-sans text-[17px] leading-[1.65] text-ink-soft max-w-[480px] mb-14">
             The case for workplace wellness has never been stronger. ESSOR makes
-            it easy to act on it. Send a brief, and we&apos;ll reply with a tailored
-            proposal within two working days.
+            it easy to act on it.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
