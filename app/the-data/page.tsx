@@ -40,7 +40,7 @@ export default function TheDataPage() {
                 Cost of disengagement
               </p>
               <p className="font-serif text-[clamp(5rem,13vw,9rem)] font-normal text-black leading-none tracking-tight mb-6 hover:opacity-60 transition-opacity cursor-default">
-                $7.5B
+                <span className="font-sans">$</span>7.5B
               </p>
               <p className="text-sm font-light text-black/55 leading-[1.8] max-w-sm mb-4">
                 The cost to NZ businesses of employees showing up but not performing. Presenteeism, low productivity, higher turnover. Physically present, mentally absent.
@@ -56,7 +56,7 @@ export default function TheDataPage() {
                 Cost of absenteeism, NZ 2024
               </p>
               <p className="font-serif text-[clamp(5rem,13vw,9rem)] font-normal text-black leading-none tracking-tight mb-6 hover:opacity-60 transition-opacity cursor-default">
-                $4.17B
+                <span className="font-sans">$</span>4.17B
               </p>
               <p className="text-sm font-light text-black/55 leading-[1.8] max-w-sm mb-4">
                 The highest figure ever recorded. Sick days, mental health leave, and the rising cost of an unwell workforce.
@@ -113,7 +113,9 @@ export default function TheDataPage() {
                 className={`py-10 ${i !== 0 ? "md:pl-12 md:border-l border-t md:border-t-0 border-black/10" : "md:pr-12"}`}
               >
                 <p className="font-serif text-[clamp(3rem,6vw,5rem)] font-normal text-black leading-none tracking-tight mb-2 hover:opacity-60 transition-opacity cursor-default">
-                  {number}
+                  {number.startsWith("$") ? (
+                    <><span className="font-sans">$</span>{number.slice(1)}</>
+                  ) : number}
                 </p>
                 {unit && (
                   <p className="text-xs font-normal uppercase tracking-[0.15em] text-black/35 mb-4">

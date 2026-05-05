@@ -71,8 +71,8 @@ export default function HomePage() {
             {/* Image — desktop */}
             <div className="hidden md:block w-[320px] lg:w-[380px] flex-shrink-0">
               <Image
-                src="https://images.unsplash.com/photo-u0BmvZujmwg?auto=format&fit=crop&w=800&q=80"
-                alt="Editorial wellness portrait, clean minimal setting"
+                src="https://images.pexels.com/photos/25599826/pexels-photo-25599826.jpeg?auto=compress&cs=tinysrgb&w=800&q=80"
+                alt="Woman exercising on a Pilates tower in a bright white studio"
                 width={380}
                 height={520}
                 className="object-cover w-full h-[460px] lg:h-[520px]"
@@ -84,8 +84,8 @@ export default function HomePage() {
           {/* Image — mobile */}
           <div className="mt-8 md:hidden">
             <Image
-              src="https://images.unsplash.com/photo-u0BmvZujmwg?auto=format&fit=crop&w=800&q=80"
-              alt="Editorial wellness portrait, clean minimal setting"
+              src="https://images.pexels.com/photos/25599826/pexels-photo-25599826.jpeg?auto=compress&cs=tinysrgb&w=800&q=80"
+              alt="Woman exercising on a Pilates tower in a bright white studio"
               width={800}
               height={480}
               className="object-cover w-full h-60"
@@ -108,7 +108,7 @@ export default function HomePage() {
               className="group pb-12 md:pb-0 md:pr-16 block"
             >
               <p className="font-serif text-[clamp(4rem,11vw,8rem)] font-normal text-black leading-none tracking-tight mb-4 group-hover:opacity-60 transition-opacity">
-                $4.17B
+                <span className="font-sans">$</span>4.17B
               </p>
               <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/40 group-hover:text-black/70 transition-colors">
                 Lost to absenteeism in NZ in 2024
@@ -120,7 +120,7 @@ export default function HomePage() {
               className="group pt-12 md:pt-0 md:pl-16 border-t md:border-t-0 md:border-l border-black/10 block"
             >
               <p className="font-serif text-[clamp(4rem,11vw,8rem)] font-normal text-black leading-none tracking-tight mb-4 group-hover:opacity-60 transition-opacity">
-                $7.5B
+                <span className="font-sans">$</span>7.5B
               </p>
               <p className="text-[10px] font-normal uppercase tracking-[0.15em] text-black/40 group-hover:text-black/70 transition-colors">
                 Lost to disengagement in NZ in 2024

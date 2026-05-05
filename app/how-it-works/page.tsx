@@ -68,8 +68,8 @@ export default function HowItWorksPage() {
       {/* Image */}
       <div className="max-w-6xl mx-auto px-6 pb-14 md:pb-20">
         <Image
-          src="https://images.unsplash.com/photo-OK7_RBq0VHI?auto=format&fit=crop&w=1400&q=80"
-          alt="Minimal wellness movement, clean natural light"
+          src="https://images.pexels.com/photos/31509822/pexels-photo-31509822.jpeg?auto=compress&cs=tinysrgb&w=1400&q=80"
+          alt="Woman performing Pilates on a reformer machine in a minimalist studio"
           width={1400}
           height={600}
           className="object-cover w-full h-[38vw] min-h-[220px] max-h-[440px]"

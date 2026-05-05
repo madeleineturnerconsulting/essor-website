@@ -33,8 +33,8 @@ export default function AboutPage() {
                 Movement is the missing variable.
               </p>
               <Image
-                src="https://images.unsplash.com/photo-7FjFDyJOv4s?auto=format&fit=crop&w=700&q=80"
-                alt="Movement and form, minimal editorial wellness photography"
+                src="https://images.pexels.com/photos/20890286/pexels-photo-20890286.jpeg?auto=compress&cs=tinysrgb&w=700&q=80"
+                alt="Woman in white sportswear in a serene yoga meditation pose"
                 width={700}
                 height={900}
                 className="object-cover w-full h-[320px] md:h-[400px]"
@@ -63,7 +63,7 @@ export default function AboutPage() {
                   href="/contact"
                   className="inline-block bg-black text-white text-xs font-normal uppercase tracking-[0.15em] px-10 py-4 hover:bg-black/75 transition-colors"
                 >
-                  Work with us
+                  Get In Touch
                 </Link>
               </div>
             </div>
