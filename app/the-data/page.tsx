@@ -14,6 +14,10 @@ const bigStats = [
   },
 ];
 
+// Note: The £5.30 Deloitte UK ROI stat has been removed.
+// No verified equivalent NZ figure was found in the Southern Cross /
+// BusinessNZ Workplace Wellness Report 2025. Stat left blank pending
+// a sourced NZ replacement.
 const gridStats = [
   ["73%",    "of NZ workers report regular back, neck or shoulder pain"],
   ["6.6",    "average sick days per worker per year, NZ 2024"],
@@ -22,7 +26,6 @@ const gridStats = [
   ["62%",    "say wellness benefits affect whether they stay at a job"],
   ["3×",     "more productive after 30 minutes of mid-day movement"],
   ["48%",    "lower turnover at companies with structured wellness"],
-  ["£5.30",  "returned per £1 spent on workplace wellbeing — Deloitte UK"],
 ];
 
 const roiBars = [
@@ -37,9 +40,9 @@ export default function TheDataPage() {
       {/* ── Hero — type only ─────────────────────────────────── */}
       <section className="px-14 pt-[120px] pb-[80px] text-center">
         <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
-          The data
+          The why
         </div>
-        <h1 className="font-serif font-light text-[clamp(44px,7.5vw,96px)] leading-none tracking-[-0.02em] max-w-[1100px] mx-auto mb-10">
+        <h1 className="font-serif font-light text-[clamp(44px,7.5vw,96px)] leading-none tracking-[-0.02em] max-w-[1100px] mx-auto mb-14">
           The cost of doing nothing<br />
           is no longer <em className="italic">abstract.</em>
         </h1>
@@ -94,7 +97,7 @@ export default function TheDataPage() {
           <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6">
             — Reading the numbers
           </div>
-          <p className="font-serif italic font-light text-[36px] leading-[1.25] mb-6">
+          <p className="font-serif italic font-light text-[36px] leading-[1.25] mb-8">
             Together, that&apos;s{" "}
             <span className="text-accent">$11.67 billion</span> a year, roughly
             3.6% of New Zealand&apos;s GDP, quietly leaving the economy through
@@ -112,7 +115,7 @@ export default function TheDataPage() {
       {/* ── Stats grid ───────────────────────────────────────── */}
       <section className="px-14 pb-[120px]">
         <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
-          § The fuller picture
+          The fuller picture
         </div>
         <div
           className="grid grid-cols-2 md:grid-cols-4"
@@ -139,21 +142,21 @@ export default function TheDataPage() {
           })}
         </div>
         <div className="font-mono text-[10px] tracking-[0.18em] text-ink-mute mt-4">
-          — SOURCES: BUSINESSNZ, STATS NZ, ACC, GALLUP, DELOITTE (2023–24)
+          — SOURCES: BUSINESSNZ, STATS NZ, ACC, GALLUP (2023–25)
         </div>
       </section>
 
       {/* ── ROI comparison ───────────────────────────────────── */}
       <section className="bg-paper-deep px-14 py-[120px]">
         <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6 text-center">
-          § Return on movement
+          Return on movement
         </div>
-        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-[1.05] tracking-[-0.02em] text-center max-w-[980px] mx-auto mb-20">
+        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-[1.05] tracking-[-0.02em] text-center max-w-[980px] mx-auto mb-8">
           For every dollar spent on workplace wellbeing,{" "}
           <em className="italic">studies suggest</em> a return of three to five.
         </h2>
 
-        <div className="max-w-[1000px] mx-auto">
+        <div className="max-w-[1000px] mx-auto mt-16">
           {roiBars.map(({ label, ratio, txt, strong }, i) => (
             <div
               key={label}
@@ -185,15 +188,15 @@ export default function TheDataPage() {
 
       {/* ── CTA ─────────────────────────────────────────────── */}
       <section className="px-14 py-[140px] text-center">
-        <h2 className="font-serif font-light text-[clamp(36px,5.6vw,72px)] leading-none tracking-[-0.02em] max-w-[900px] mx-auto mb-8">
+        <h2 className="font-serif font-light text-[clamp(36px,5.6vw,72px)] leading-none tracking-[-0.02em] max-w-[900px] mx-auto mb-10">
           The case has been<br />made for you.
         </h2>
-        <p className="font-sans text-[16px] text-ink-soft max-w-[540px] mx-auto mb-12">
+        <p className="font-sans text-[16px] text-ink-soft max-w-[540px] mx-auto mb-14">
           ESSOR makes the next step simple.
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-paper font-mono text-[12px] tracking-[0.18em] uppercase hover:bg-ink-soft transition-colors"
+          className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors"
         >
           Get in touch &nbsp;→
         </Link>

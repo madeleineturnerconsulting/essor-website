@@ -3,22 +3,19 @@ import Image from "next/image";
 
 const steps = [
   {
-    n: "I",
     title: "We Tailor A Plan for You",
     desc: "Based on your team size, and available space, we design a session schedule that fits your working week. We sort the logistics so you don't have to.",
     meta: "TAILORED TO YOUR TEAM",
   },
   {
-    n: "II",
     title: "We Come to You",
     desc: "Your teacher arrives at your office ready to go. No equipment hire, no venue booking, no commute for your team. Pilates happens in your space, on your time.",
     meta: "ON-SITE · NO FUSS",
   },
   {
-    n: "III",
     title: "Your Team Moves",
-    desc: "Sessions run for 45 to 60 minutes. Suitable for all fitness levels, no experience needed. We guide your people through every movement, whether it is their first class or their fiftieth.",
-    meta: "45–60 MINUTES · ALL LEVELS",
+    desc: "Sessions run for 30, 45 or 60 minutes. Suitable for all fitness levels, no experience needed. We guide your people through every movement, whether it is their first class or their fiftieth.",
+    meta: "30, 45 OR 60 MINUTES · ALL LEVELS",
   },
 ];
 
@@ -28,9 +25,6 @@ export default function HowItWorksPage() {
       {/* ── Page hero ───────────────────────────────────────── */}
       <section className="px-14 pt-[120px] pb-[80px] grid md:grid-cols-2 gap-24 items-end">
         <div>
-          <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
-            How it works
-          </div>
           <h1 className="font-serif font-light text-[clamp(52px,7.5vw,96px)] leading-none tracking-[-0.02em]">
             How it <em className="italic">works.</em>
           </h1>
@@ -52,22 +46,18 @@ export default function HowItWorksPage() {
             className="object-cover"
           />
         </div>
-        <div className="font-mono text-[10px] tracking-[0.18em] text-ink-mute mt-3">
-          FIG. I — IN-HOUSE, BOARDROOM CONVERSION
-        </div>
       </section>
 
       {/* ── Three steps ─────────────────────────────────────── */}
       <section className="px-14 pb-[140px]">
         <div className="border-t border-ink">
-          {steps.map(({ n, title, desc, meta }) => (
+          {steps.map(({ title, desc, meta }) => (
             <div
-              key={n}
-              className="grid grid-cols-[60px_1fr] md:grid-cols-[120px_1fr_280px] gap-8 md:gap-14 py-14 border-b border-rule items-start"
+              key={title}
+              className="grid grid-cols-1 md:grid-cols-[1fr_280px] gap-8 md:gap-14 py-14 border-b border-rule items-start"
             >
-              <div className="font-serif italic text-[64px] text-accent leading-none font-light">{n}</div>
               <div>
-                <h3 className="font-serif text-[36px] font-normal mb-4">{title}</h3>
+                <h3 className="font-serif text-[36px] font-normal mb-6">{title}</h3>
                 <p className="font-sans text-[16px] text-ink-soft leading-[1.65] max-w-[560px]">{desc}</p>
               </div>
               <div className="hidden md:block font-mono text-[10px] tracking-[0.18em] text-ink-mute pt-4">
@@ -80,12 +70,12 @@ export default function HowItWorksPage() {
 
       {/* ── CTA ─────────────────────────────────────────────── */}
       <section className="px-14 py-[140px] text-center">
-        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-none tracking-[-0.02em] max-w-[800px] mx-auto mb-12">
+        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-none tracking-[-0.02em] max-w-[800px] mx-auto mb-14">
           Begin with a <em className="italic">conversation.</em>
         </h2>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-paper font-mono text-[12px] tracking-[0.18em] uppercase hover:bg-ink-soft transition-colors"
+          className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors"
         >
           Get in touch &nbsp;→
         </Link>

@@ -1,16 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 
-// Roman numeral Unicode chars: Ⅰ Ⅱ Ⅲ Ⅳ Ⅴ Ⅵ
-const ROMAN = ["Ⅰ", "Ⅱ", "Ⅲ", "Ⅳ", "Ⅴ", "Ⅵ"];
-
 const atAGlance = [
-  ["Ⅰ",  "Capacity",     "Up to 30 people in person, or up to 100 virtually."],
-  ["Ⅱ",  "Experience",   "All fitness levels welcomed; beginners encouraged."],
-  ["Ⅲ",  "Duration",     "30, 45 or 60 minute sessions, tailored to your workplace."],
-  ["Ⅳ",  "Equipment",    "Mats provided on request."],
-  ["Ⅴ",  "Your teacher", "Fully qualified Mat Pilates teacher; pre and postnatal certified."],
-  ["Ⅵ",  "Availability", "On-site in Auckland, or virtually around Aotearoa."],
+  ["Capacity",     "Up to 30 people in person, or up to 100 virtually."],
+  ["Experience",   "All fitness levels welcomed; beginners encouraged."],
+  ["Duration",     "30, 45 or 60 minute sessions, tailored to your workplace."],
+  ["Equipment",    "Mats provided on request."],
+  ["Your teacher", "Fully qualified Mat Pilates teacher; pre and postnatal certified."],
+  ["Availability", "On-site in Auckland, or virtually around Aotearoa."],
 ];
 
 const caseItems = [
@@ -34,7 +31,7 @@ export default function HomePage() {
           </div>
 
           <div>
-            <h1 className="font-serif font-light text-[clamp(52px,7vw,92px)] leading-none tracking-[-0.022em] mb-12">
+            <h1 className="font-serif font-light text-[clamp(52px,7vw,92px)] leading-none tracking-[-0.022em] mb-14">
               Your team<br />
               deserves to<br />
               <em className="italic text-accent">feel good</em><br />
@@ -47,16 +44,14 @@ export default function HomePage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-paper font-mono text-[12px] tracking-[0.18em] uppercase hover:bg-ink-soft transition-colors"
+              className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors"
             >
-              Get in touch &nbsp;→
+              Book a Class &nbsp;→
             </Link>
           </div>
 
-          <div className="font-mono text-[10px] tracking-[0.18em] text-ink-mute flex justify-between mt-20">
-            <span>EST. MMXXIV</span>
+          <div className="font-mono text-[10px] tracking-[0.18em] text-ink-mute mt-20">
             <span>NZ-WIDE · IN-HOUSE</span>
-            <span>I · VIII</span>
           </div>
         </div>
 
@@ -95,9 +90,9 @@ export default function HomePage() {
         <div className="grid md:grid-cols-[1fr_2fr] gap-20 mb-20">
           <div>
             <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6">
-              § I &nbsp;· At a glance
+              At a glance
             </div>
-            <h2 className="font-serif font-light text-[56px] leading-none tracking-[-0.02em]">
+            <h2 className="font-serif font-light text-[56px] leading-none tracking-[-0.02em] mb-6">
               The shape<br />of a session.
             </h2>
           </div>
@@ -109,17 +104,13 @@ export default function HomePage() {
 
         {/* Table */}
         <div className="border-t border-ink">
-          {atAGlance.map(([n, label, value]) => (
+          {atAGlance.map(([label, value]) => (
             <div
               key={label}
-              className="grid grid-cols-[48px_1fr] md:grid-cols-[80px_240px_1fr_180px] gap-4 md:gap-8 py-8 border-b border-rule items-baseline"
+              className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-4 md:gap-8 py-8 border-b border-rule items-baseline"
             >
-              <span className="font-serif italic text-[22px] text-accent">{n}</span>
               <h3 className="font-serif text-[24px] font-normal">{label}</h3>
-              <p className="font-sans text-[15px] text-ink-soft leading-[1.55] col-start-2 md:col-auto">{value}</p>
-              <span className="hidden md:block font-mono text-[10px] text-ink-mute tracking-[0.18em] text-right">
-                · DETAIL
-              </span>
+              <p className="font-sans text-[15px] text-ink-soft leading-[1.55]">{value}</p>
             </div>
           ))}
         </div>
@@ -136,9 +127,6 @@ export default function HomePage() {
               className="object-cover"
             />
           </div>
-          <figcaption className="font-mono text-[10px] tracking-[0.18em] text-ink-mute mt-3">
-            FIG. II · IN-HOUSE GROUP, MORNING
-          </figcaption>
         </figure>
         <figure className="m-0 md:pt-20">
           <div className="relative h-[540px] bw-photo">
@@ -149,9 +137,6 @@ export default function HomePage() {
               className="object-cover"
             />
           </div>
-          <figcaption className="font-mono text-[10px] tracking-[0.18em] text-ink-mute mt-3">
-            FIG. III · BREATH WORK, DETAIL
-          </figcaption>
         </figure>
       </section>
 
@@ -159,9 +144,9 @@ export default function HomePage() {
       <section className="bg-paper-deep px-14 py-[120px]">
         <div className="text-center mb-[100px]">
           <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6">
-            § II &nbsp;· The case for Pilates
+            The case for Pilates
           </div>
-          <h2 className="font-serif font-light text-[clamp(44px,5.6vw,72px)] leading-[1.05] tracking-[-0.02em] max-w-[900px] mx-auto">
+          <h2 className="font-serif font-light text-[clamp(44px,5.6vw,72px)] leading-[1.05] tracking-[-0.02em] max-w-[900px] mx-auto mt-4">
             What Pilates does <em className="italic">for your team.</em>
           </h2>
         </div>
@@ -179,10 +164,7 @@ export default function HomePage() {
                   borderBottom: row === 0 ? "1px solid var(--rule)" : "none",
                 }}
               >
-                <div className="font-serif italic text-[26px] text-accent mb-7">
-                  {ROMAN[i]}.
-                </div>
-                <h3 className="font-serif text-[26px] font-normal leading-[1.15] mb-4">
+                <h3 className="font-serif text-[26px] font-normal leading-[1.15] mb-5">
                   {title}
                 </h3>
                 <p className="font-sans text-[14px] text-ink-soft leading-[1.65]">{desc}</p>
@@ -221,29 +203,27 @@ export default function HomePage() {
       <section className="px-14 py-[160px] grid md:grid-cols-2 gap-20 items-end">
         <div>
           <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
-            § III &nbsp;· Begin
+            Begin
           </div>
           <h2 className="font-serif font-light text-[clamp(44px,6.25vw,80px)] leading-none tracking-[-0.02em]">
-            Invest in<br />your people.<br />
-            <em className="italic">Protect</em><br />
-            your bottom line.
+            Invest in<br />your people.
           </h2>
         </div>
         <div>
-          <p className="font-sans text-[17px] leading-[1.65] text-ink-soft max-w-[480px] mb-14">
+          <p className="font-sans text-[17px] leading-[1.65] text-ink-soft max-w-[480px] mb-20">
             The case for workplace wellness has never been stronger. ESSOR makes
             it easy to act on it.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-paper font-mono text-[12px] tracking-[0.18em] uppercase hover:bg-ink-soft transition-colors"
+              className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors"
             >
-              Get in touch
+              Book a Class
             </Link>
             <Link
               href="/how-it-works"
-              className="inline-flex items-center gap-4 px-7 py-[18px] border border-ink text-ink font-mono text-[12px] tracking-[0.18em] uppercase hover:bg-ink hover:text-paper transition-colors"
+              className="inline-flex items-center gap-4 px-7 py-[18px] border border-ink text-ink font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink hover:text-white transition-colors"
             >
               See how it works
             </Link>

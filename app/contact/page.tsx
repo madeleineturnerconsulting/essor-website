@@ -94,7 +94,7 @@ export default function ContactPage() {
           <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
             Contact
           </div>
-          <h1 className="font-serif font-light text-[clamp(44px,6.25vw,80px)] leading-none tracking-[-0.02em] mb-10">
+          <h1 className="font-serif font-light text-[clamp(44px,6.25vw,80px)] leading-none tracking-[-0.02em] mb-12">
             Get in <em className="italic">touch.</em>
           </h1>
           <p className="font-sans text-[16px] leading-[1.7] text-ink-soft max-w-[460px] mb-4">
@@ -109,7 +109,7 @@ export default function ContactPage() {
               Or reach us directly
             </div>
             <div className="font-serif text-[28px] font-light tracking-[-0.01em]">
-              hello@essor.co.nz
+              hello@essor.nz
             </div>
           </div>
         </div>
@@ -146,7 +146,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={state === "submitting"}
-                  className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-paper font-mono text-[12px] tracking-[0.18em] uppercase hover:bg-ink-soft transition-colors disabled:opacity-40"
+                  className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors disabled:opacity-40"
                 >
                   {state === "submitting" ? "Sending…" : "Send →"}
                 </button>
@@ -169,7 +169,7 @@ export default function ContactPage() {
       {/* ── FAQ ─────────────────────────────────────────────── */}
       <section className="px-14 py-[120px]">
         <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
-          § Frequently asked
+          Frequently asked
         </div>
         <div className="border-t border-ink">
           {faqs.map(([question, answer]) => (

@@ -2,16 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 
 const values = [
-  ["I",   "Our mission", "Make workplace wellness the norm, not the exception."],
-  ["II",  "Our method",  "In-house Pilates, designed around your team and your space."],
-  ["III", "Our standard","Qualified teachers. Programmes that fit real working weeks."],
+  ["Our mission", "Make workplace wellness the norm, not the exception."],
+  ["Our method",  "In-house Pilates, designed around your team and your space."],
+  ["Our standard","Qualified teachers. Programmes that fit real working weeks."],
 ];
 
 const credentials = [
   "Mat Pilates · Body Control Pilates, London",
   "Pre and Post Natal Pilates · Barre Body",
-  "Corporate wellness · Digital and Growth roles, UK, US and Australia",
-  "In-house Pilates for Auckland workplaces since 2024",
+  "In-house Pilates for Auckland workplaces",
 ];
 
 export default function AboutPage() {
@@ -42,9 +41,6 @@ export default function AboutPage() {
             className="object-cover"
           />
         </div>
-        <div className="font-mono text-[10px] tracking-[0.18em] text-ink-mute mt-3">
-          FIG. I · MOVEMENT IS THE MISSING VARIABLE
-        </div>
       </section>
 
       {/* ── Story ───────────────────────────────────────────── */}
@@ -59,12 +55,12 @@ export default function AboutPage() {
         </div>
         <div>
           <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6">
-            § I · The story
+            The story
           </div>
-          <h2 className="font-serif font-light text-[clamp(36px,4.4vw,56px)] leading-[1.05] tracking-[-0.02em] mb-8">
+          <h2 className="font-serif font-light text-[clamp(36px,4.4vw,56px)] leading-[1.05] tracking-[-0.02em] mb-10">
             Movement is the<br />missing variable.
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-8">
             <p className="font-sans text-[16px] leading-[1.7] text-ink-soft">
               ESSOR was born from two things: a deep love of movement, and
               first-hand experience of what happens when people don&apos;t have
@@ -104,7 +100,10 @@ export default function AboutPage() {
             </p>
             <p className="font-sans text-[16px] leading-[1.7] text-ink-soft">
               I truly believe my purpose is to improve the lives of others
-              through health and movement. Today, that takes shape through ESSOR.
+              through health and movement.
+            </p>
+            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft">
+              Today, that takes shape through ESSOR.
               We come to your workplace, we run the session, and we make it easy
               for your people to show up. No gym memberships, no studio commute,
               no scheduling headaches. Just movement, where your team already is.
@@ -116,21 +115,20 @@ export default function AboutPage() {
       {/* ── Values ──────────────────────────────────────────── */}
       <section className="bg-paper-deep px-14 py-[120px]">
         <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6 text-center">
-          § II · What we stand for
+          What we stand for
         </div>
-        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-none tracking-[-0.02em] text-center mb-20">
+        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-none tracking-[-0.02em] text-center mb-4">
           What we <em className="italic">believe in.</em>
         </h2>
-        <div className="grid md:grid-cols-3 border-t border-ink">
-          {values.map(([n, label, value], i) => (
+        <div className="grid md:grid-cols-3 border-t border-ink mt-14">
+          {values.map(([label, value], i) => (
             <div
-              key={n}
+              key={label}
               className="p-8 min-h-[280px] border-b border-ink"
               style={{ borderRight: i < 2 ? "1px solid var(--rule)" : "none" }}
             >
-              <div className="font-serif italic text-[32px] text-accent mb-6">{n}.</div>
               <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-ink-mute mb-4">{label}</div>
-              <h3 className="font-serif text-[26px] font-normal leading-[1.2]">{value}</h3>
+              <h3 className="font-serif text-[26px] font-normal leading-[1.2] mt-4">{value}</h3>
             </div>
           ))}
         </div>
@@ -141,9 +139,9 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-[1fr_2fr] gap-20 items-start">
           <div>
             <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6">
-              § III · Qualifications
+              Qualifications
             </div>
-            <h2 className="font-serif font-light text-[48px] leading-[1.05] tracking-[-0.02em]">
+            <h2 className="font-serif font-light text-[48px] leading-[1.05] tracking-[-0.02em] mb-8">
               The teacher,<br />in detail.
             </h2>
           </div>
@@ -162,12 +160,12 @@ export default function AboutPage() {
 
       {/* ── CTA ─────────────────────────────────────────────── */}
       <section className="px-14 py-[140px] text-center border-t border-ink">
-        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-none tracking-[-0.02em] max-w-[800px] mx-auto mb-12">
-          Invest in your people.<br /><em className="italic">Protect your bottom line.</em>
+        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-none tracking-[-0.02em] max-w-[800px] mx-auto mb-14">
+          Invest in your people.
         </h2>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-paper font-mono text-[12px] tracking-[0.18em] uppercase hover:bg-ink-soft transition-colors"
+          className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors"
         >
           Get in touch &nbsp;→
         </Link>

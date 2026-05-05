@@ -45,12 +45,12 @@ export default function Nav() {
           ))}
         </div>
 
-        {/* Discovery link */}
+        {/* Trial link */}
         <Link
           href="/contact"
           className="font-mono text-[10px] tracking-[0.18em] text-accent hover:opacity-70 transition-opacity"
         >
-          BOOK A DISCOVERY →
+          BOOK A TRIAL →
         </Link>
       </nav>
 
@@ -91,7 +91,7 @@ export default function Nav() {
             onClick={() => setOpen(false)}
             className="font-mono text-[10px] tracking-[0.18em] text-accent mt-2"
           >
-            BOOK A DISCOVERY →
+            BOOK A TRIAL →
           </Link>
         </nav>
       )}

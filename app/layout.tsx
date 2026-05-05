@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { DM_Serif_Display, Poppins, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
 import Link from "next/link";
 
-const cormorant = Cormorant_Garamond({
-  weight: ["300", "400", "700"],
+const dmSerif = DM_Serif_Display({
+  weight: ["400"],
   style: ["normal", "italic"],
   subsets: ["latin"],
-  variable: "--font-cormorant",
+  variable: "--font-dm-serif",
 });
 
-const interTight = Inter_Tight({
-  weight: ["300", "400", "500"],
+const poppins = Poppins({
+  weight: ["300", "400", "500", "600"],
   subsets: ["latin"],
-  variable: "--font-inter-tight",
+  variable: "--font-poppins",
 });
 
 const jetbrains = JetBrains_Mono({
@@ -32,7 +32,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${interTight.variable} ${jetbrains.variable}`}>
+    <html lang="en" className={`${dmSerif.variable} ${poppins.variable} ${jetbrains.variable}`}>
       <body className="min-h-screen flex flex-col bg-paper text-ink">
         <Nav />
         <main className="flex-1">{children}</main>
@@ -65,7 +65,7 @@ export default function RootLayout({
                 Reach
               </div>
               <div className="font-sans text-[13px] text-ink-soft space-y-2">
-                <div>hello@essor.co.nz</div>
+                <div>hello@essor.nz</div>
                 <div>Auckland · NZ</div>
               </div>
             </div>
