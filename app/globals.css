@@ -20,7 +20,8 @@
   --color-accent:     var(--accent);
   --font-serif: var(--font-dm-serif);
   --font-sans:  var(--font-poppins);
-  --font-mono:  var(--font-jetbrains);
+  /* JetBrains Mono replaced with Poppins across all uses */
+  --font-mono:  var(--font-poppins);
 }
 
 body {
@@ -38,7 +39,11 @@ body {
 }
 
 p { margin: 0; }
-h1, h2, h3, h4 { margin: 0; font-weight: inherit; }
+
+/* DM Serif Display only ships at weight 400; setting 300 here signals the
+   lightest available rendering and ensures future font swaps inherit it. */
+h1, h2, h3, h4 { margin: 0; font-weight: 300; }
+
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 

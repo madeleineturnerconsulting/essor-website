@@ -25,7 +25,7 @@ function Field({
 }) {
   return (
     <label className="block border-b border-rule py-5">
-      <div className="font-mono text-[10px] tracking-[0.2em] text-ink-mute mb-2">{label}</div>
+      <div className="font-sans text-[10px] tracking-[0.2em] text-ink-mute mb-2">{label}</div>
       {textarea ? (
         <textarea
           name={name}
@@ -91,21 +91,21 @@ export default function ContactPage() {
       <section className="px-14 py-[120px] grid md:grid-cols-[1fr_1.1fr] gap-24 min-h-[900px]">
         {/* Left */}
         <div>
-          <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
+          <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-10">
             Contact
           </div>
-          <h1 className="font-serif font-light text-[clamp(44px,6.25vw,80px)] leading-none tracking-[-0.02em] mb-12">
+          <h1 className="font-serif font-light text-[clamp(44px,6.25vw,80px)] leading-none tracking-[-0.02em] mb-16">
             Get in <em className="italic">touch.</em>
           </h1>
-          <p className="font-sans text-[16px] leading-[1.7] text-ink-soft max-w-[460px] mb-4">
+          <p className="font-sans text-[16px] leading-[1.7] text-ink-soft max-w-[460px] mb-6">
             Tell us about your team and your workplace. We will get back to you
             within one business day.
           </p>
-          <p className="font-sans text-[16px] leading-[1.7] text-ink-soft max-w-[460px] mb-12">
+          <p className="font-sans text-[16px] leading-[1.7] text-ink-soft max-w-[460px] mb-16">
             Pricing on request.
           </p>
-          <div className="border-t border-ink pt-8">
-            <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-ink-mute mb-4">
+          <div className="border-t border-ink pt-10">
+            <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-ink-mute mb-6">
               Or reach us directly
             </div>
             <div className="font-serif text-[28px] font-light tracking-[-0.01em]">
@@ -139,8 +139,8 @@ export default function ContactPage() {
                 </p>
               )}
 
-              <div className="flex justify-between items-center pt-8">
-                <span className="font-mono text-[10px] tracking-[0.18em] text-ink-mute">
+              <div className="flex justify-between items-center pt-10">
+                <span className="font-sans text-[10px] tracking-[0.18em] text-ink-mute">
                   REPLY · WITHIN 1 BUSINESS DAY
                 </span>
                 <button
@@ -161,14 +161,14 @@ export default function ContactPage() {
         <p className="font-serif italic font-light text-[clamp(24px,3.4vw,44px)] leading-[1.25] max-w-[1000px] mx-auto">
           &ldquo;Begin with a conversation. The right rhythm reveals itself once we have walked your floor.&rdquo;
         </p>
-        <div className="font-mono text-[10px] tracking-[0.22em] text-ink-mute mt-8">
+        <div className="font-sans text-[10px] tracking-[0.22em] text-ink-mute mt-8">
           · ESSOR PRACTICE NOTE
         </div>
       </section>
 
       {/* ── FAQ ─────────────────────────────────────────────── */}
       <section className="px-14 py-[120px]">
-        <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
+        <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-10">
           Frequently asked
         </div>
         <div className="border-t border-ink">

@@ -4,7 +4,7 @@ import Image from "next/image";
 const values = [
   ["Our mission", "Make workplace wellness the norm, not the exception."],
   ["Our method",  "In-house Pilates, designed around your team and your space."],
-  ["Our standard","Qualified teachers. Programmes that fit real working weeks."],
+  ["Our standard","Qualified teachers. Sessions that fit real working weeks."],
 ];
 
 const credentials = [
@@ -19,7 +19,7 @@ export default function AboutPage() {
       {/* ── Hero ────────────────────────────────────────────── */}
       <section className="px-14 pt-[120px] pb-[80px] grid md:grid-cols-2 gap-24 items-end">
         <div>
-          <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
+          <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-10">
             Our story
           </div>
           <h1 className="font-serif font-light text-[clamp(52px,7.5vw,96px)] leading-none tracking-[-0.02em]">
@@ -54,14 +54,16 @@ export default function AboutPage() {
           />
         </div>
         <div>
-          <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6">
+          <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
             The story
           </div>
-          <h2 className="font-serif font-light text-[clamp(36px,4.4vw,56px)] leading-[1.05] tracking-[-0.02em] mb-10">
+          <h2 className="font-serif font-light text-[clamp(36px,4.4vw,56px)] leading-[1.05] tracking-[-0.02em] mb-16">
             Movement is the<br />missing variable.
           </h2>
-          <div className="space-y-8">
-            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft">
+          {/* Each paragraph has explicit bottom margin; double spacing (mb-16)
+              applied after paragraphs ending at the four specified sentences */}
+          <div>
+            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft mb-16">
               ESSOR was born from two things: a deep love of movement, and
               first-hand experience of what happens when people don&apos;t have
               access to it. The numbers tell a clear story. New Zealand
@@ -71,7 +73,7 @@ export default function AboutPage() {
               is one of the most effective and accessible ways to change that.
               It is why ESSOR exists.
             </p>
-            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft">
+            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft mb-16">
               Throughout a corporate career spanning Digital and Growth roles
               across the UK, US and Australian markets, I almost always chose to
               work for purpose-led businesses in the wellness sector. What I
@@ -79,7 +81,7 @@ export default function AboutPage() {
               encouraged movement, everything shifted. People showed up
               differently, for themselves, for their teams, and for the business.
             </p>
-            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft">
+            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft mb-16">
               At a personalised nutrition scale-up, bonus incentives and
               lunchtime team workouts were part of the culture. At Nike, movement
               classes and physio during work hours were built into the day. The
@@ -89,7 +91,7 @@ export default function AboutPage() {
               down to senior leadership treating movement as a priority, not a
               perk.
             </p>
-            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft">
+            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft mb-16">
               Movement has been central to my life since childhood. While others
               went to netball, I was at kids yoga. That translated into a career
               in health and wellness, and in 2021 I decided to formalise it. I
@@ -98,7 +100,7 @@ export default function AboutPage() {
               institution, and went on to complete my Pre and Post Natal
               qualification through Barre Body.
             </p>
-            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft">
+            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft mb-10">
               I truly believe my purpose is to improve the lives of others
               through health and movement.
             </p>
@@ -114,7 +116,7 @@ export default function AboutPage() {
 
       {/* ── Values ──────────────────────────────────────────── */}
       <section className="bg-paper-deep px-14 py-[120px]">
-        <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6 text-center">
+        <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-8 text-center">
           What we stand for
         </div>
         <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-none tracking-[-0.02em] text-center mb-4">
@@ -127,7 +129,7 @@ export default function AboutPage() {
               className="p-8 min-h-[280px] border-b border-ink"
               style={{ borderRight: i < 2 ? "1px solid var(--rule)" : "none" }}
             >
-              <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-ink-mute mb-4">{label}</div>
+              <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-ink-mute mb-6">{label}</div>
               <h3 className="font-serif text-[26px] font-normal leading-[1.2] mt-4">{value}</h3>
             </div>
           ))}
@@ -138,10 +140,10 @@ export default function AboutPage() {
       <section className="px-14 py-[140px]">
         <div className="grid md:grid-cols-[1fr_2fr] gap-20 items-start">
           <div>
-            <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6">
+            <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
               Qualifications
             </div>
-            <h2 className="font-serif font-light text-[48px] leading-[1.05] tracking-[-0.02em] mb-8">
+            <h2 className="font-serif font-light text-[48px] leading-[1.05] tracking-[-0.02em] mb-10">
               The teacher,<br />in detail.
             </h2>
           </div>
@@ -160,7 +162,7 @@ export default function AboutPage() {
 
       {/* ── CTA ─────────────────────────────────────────────── */}
       <section className="px-14 py-[140px] text-center border-t border-ink">
-        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-none tracking-[-0.02em] max-w-[800px] mx-auto mb-14">
+        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-none tracking-[-0.02em] max-w-[800px] mx-auto mb-20">
           Invest in your people.
         </h2>
         <Link

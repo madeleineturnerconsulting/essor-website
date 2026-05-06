@@ -26,18 +26,18 @@ export default function HomePage() {
       <section className="grid md:grid-cols-[1.05fr_1fr] min-h-[760px]">
         {/* Left */}
         <div className="px-14 pt-[100px] pb-[80px] flex flex-col justify-between">
-          <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-ink-mute">
+          <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-ink-mute">
             Corporate wellness · Auckland, NZ
           </div>
 
           <div>
-            <h1 className="font-serif font-light text-[clamp(52px,7vw,92px)] leading-none tracking-[-0.022em] mb-14">
+            <h1 className="font-serif font-light text-[clamp(52px,7vw,92px)] leading-none tracking-[-0.022em] mb-20">
               Your team<br />
               deserves to<br />
               <em className="italic text-accent">feel good</em><br />
               at work.
             </h1>
-            <p className="font-sans text-[17px] leading-[1.65] text-ink-soft max-w-[460px] mb-14">
+            <p className="font-sans text-[17px] leading-[1.65] text-ink-soft max-w-[460px] mb-20">
               ESSOR brings in-house Pilates to New Zealand workplaces, reducing
               absenteeism, easing stress, and building the kind of culture that
               keeps people around.
@@ -50,7 +50,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="font-mono text-[10px] tracking-[0.18em] text-ink-mute mt-20">
+          <div className="font-sans text-[10px] tracking-[0.18em] text-ink-mute mt-20">
             <span>NZ-WIDE · IN-HOUSE</span>
           </div>
         </div>
@@ -89,10 +89,10 @@ export default function HomePage() {
         {/* Header row */}
         <div className="grid md:grid-cols-[1fr_2fr] gap-20 mb-20">
           <div>
-            <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6">
+            <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
               At a glance
             </div>
-            <h2 className="font-serif font-light text-[56px] leading-none tracking-[-0.02em] mb-6">
+            <h2 className="font-serif font-light text-[56px] leading-none tracking-[-0.02em]">
               The shape<br />of a session.
             </h2>
           </div>
@@ -143,10 +143,10 @@ export default function HomePage() {
       {/* ── The case for Pilates ────────────────────────────── */}
       <section className="bg-paper-deep px-14 py-[120px]">
         <div className="text-center mb-[100px]">
-          <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-6">
+          <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
             The case for Pilates
           </div>
-          <h2 className="font-serif font-light text-[clamp(44px,5.6vw,72px)] leading-[1.05] tracking-[-0.02em] max-w-[900px] mx-auto mt-4">
+          <h2 className="font-serif font-light text-[clamp(44px,5.6vw,72px)] leading-[1.05] tracking-[-0.02em] max-w-[900px] mx-auto">
             What Pilates does <em className="italic">for your team.</em>
           </h2>
         </div>
@@ -164,7 +164,7 @@ export default function HomePage() {
                   borderBottom: row === 0 ? "1px solid var(--rule)" : "none",
                 }}
               >
-                <h3 className="font-serif text-[26px] font-normal leading-[1.15] mb-5">
+                <h3 className="font-serif text-[26px] font-normal leading-[1.15] mb-8">
                   {title}
                 </h3>
                 <p className="font-sans text-[14px] text-ink-soft leading-[1.65]">{desc}</p>
@@ -188,7 +188,7 @@ export default function HomePage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(15,14,12,0.05) 0%, rgba(15,14,12,0.55) 100%)" }} />
         {/* Quote */}
         <div className="absolute inset-0 flex flex-col justify-center px-14 md:px-[120px]">
-          <div className="font-mono text-[10px] tracking-[0.18em] text-paper/70 mb-8">
+          <div className="font-sans text-[10px] tracking-[0.18em] text-paper/70 mb-10">
             · ON PRACTICE
           </div>
           <p className="font-serif italic font-light text-[clamp(28px,4.4vw,56px)] leading-[1.2] text-paper max-w-[1000px]">
@@ -202,7 +202,7 @@ export default function HomePage() {
       {/* ── Closing CTA ─────────────────────────────────────── */}
       <section className="px-14 py-[160px] grid md:grid-cols-2 gap-20 items-end">
         <div>
-          <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
+          <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-10">
             Begin
           </div>
           <h2 className="font-serif font-light text-[clamp(44px,6.25vw,80px)] leading-none tracking-[-0.02em]">
@@ -210,7 +210,7 @@ export default function HomePage() {
           </h2>
         </div>
         <div>
-          <p className="font-sans text-[17px] leading-[1.65] text-ink-soft max-w-[480px] mb-20">
+          <p className="font-sans text-[17px] leading-[1.65] text-ink-soft max-w-[480px] mb-28">
             The case for workplace wellness has never been stronger. ESSOR makes
             it easy to act on it.
           </p>

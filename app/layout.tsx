@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, Poppins, JetBrains_Mono } from "next/font/google";
+import { DM_Serif_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
 import Link from "next/link";
@@ -17,12 +17,6 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-const jetbrains = JetBrains_Mono({
-  weight: ["400"],
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-});
-
 export const metadata: Metadata = {
   title: "ESSOR — Corporate Wellness",
   description: "In-house Mat Pilates for New Zealand workplaces. Reduce absenteeism, ease stress, build culture.",
@@ -32,7 +26,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${dmSerif.variable} ${poppins.variable} ${jetbrains.variable}`}>
+    <html lang="en" className={`${dmSerif.variable} ${poppins.variable}`}>
       <body className="min-h-screen flex flex-col bg-paper text-ink">
         <Nav />
         <main className="flex-1">{children}</main>
@@ -41,7 +35,8 @@ export default function RootLayout({
         <footer className="border-t border-ink bg-paper px-14 py-14">
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-12">
             <div>
-              <div className="font-serif font-bold text-[32px] tracking-[0.36em] pl-[0.36em] mb-6 text-ink">
+              {/* Logo — no letter-spacing */}
+              <div className="font-serif font-bold text-[32px] mb-6 text-ink">
                 ESSOR
               </div>
               <p className="font-sans text-[13px] text-ink-soft max-w-[280px] leading-relaxed">
@@ -50,7 +45,7 @@ export default function RootLayout({
             </div>
 
             <div>
-              <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-ink-mute mb-4">
+              <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-ink-mute mb-4">
                 Studio
               </div>
               <div className="font-sans text-[13px] text-ink-soft space-y-2">
@@ -61,7 +56,7 @@ export default function RootLayout({
             </div>
 
             <div>
-              <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-ink-mute mb-4">
+              <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-ink-mute mb-4">
                 Reach
               </div>
               <div className="font-sans text-[13px] text-ink-soft space-y-2">
@@ -71,7 +66,7 @@ export default function RootLayout({
             </div>
 
             <div className="md:self-end md:text-right">
-              <span className="font-mono text-[10px] tracking-[0.18em] text-ink-mute">
+              <span className="font-sans text-[10px] tracking-[0.18em] text-ink-mute">
                 © MMXXVI ESSOR
               </span>
             </div>

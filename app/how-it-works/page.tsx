@@ -57,10 +57,10 @@ export default function HowItWorksPage() {
               className="grid grid-cols-1 md:grid-cols-[1fr_280px] gap-8 md:gap-14 py-14 border-b border-rule items-start"
             >
               <div>
-                <h3 className="font-serif text-[36px] font-normal mb-6">{title}</h3>
+                <h3 className="font-serif text-[36px] font-normal mb-10">{title}</h3>
                 <p className="font-sans text-[16px] text-ink-soft leading-[1.65] max-w-[560px]">{desc}</p>
               </div>
-              <div className="hidden md:block font-mono text-[10px] tracking-[0.18em] text-ink-mute pt-4">
+              <div className="hidden md:block font-sans text-[10px] tracking-[0.18em] text-ink-mute pt-4">
                 — {meta}
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function HowItWorksPage() {
 
       {/* ── CTA ─────────────────────────────────────────────── */}
       <section className="px-14 py-[140px] text-center">
-        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-none tracking-[-0.02em] max-w-[800px] mx-auto mb-14">
+        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-none tracking-[-0.02em] max-w-[800px] mx-auto mb-20">
           Begin with a <em className="italic">conversation.</em>
         </h2>
         <Link

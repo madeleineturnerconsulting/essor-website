@@ -20,10 +20,10 @@ export default function Nav() {
     <header className="bg-paper sticky top-0 z-50 border-b border-rule">
       {/* Desktop nav */}
       <nav className="hidden md:grid grid-cols-[auto_1fr_auto] items-center px-14 py-7 gap-16">
-        {/* Wordmark */}
+        {/* Wordmark — no letter-spacing */}
         <Link
           href="/"
-          className="font-serif font-bold text-[26px] tracking-[0.36em] pl-[0.36em] text-ink hover:opacity-60 transition-opacity"
+          className="font-serif font-bold text-[26px] text-ink hover:opacity-60 transition-opacity"
         >
           ESSOR
         </Link>
@@ -48,7 +48,7 @@ export default function Nav() {
         {/* Trial link */}
         <Link
           href="/contact"
-          className="font-mono text-[10px] tracking-[0.18em] text-accent hover:opacity-70 transition-opacity"
+          className="font-sans text-[10px] tracking-[0.18em] text-accent hover:opacity-70 transition-opacity"
         >
           BOOK A TRIAL →
         </Link>
@@ -56,9 +56,10 @@ export default function Nav() {
 
       {/* Mobile nav bar */}
       <div className="md:hidden flex items-center justify-between px-6 py-5">
+        {/* Wordmark — no letter-spacing */}
         <Link
           href="/"
-          className="font-serif font-bold text-[22px] tracking-[0.36em] pl-[0.36em] text-ink"
+          className="font-serif font-bold text-[22px] text-ink"
         >
           ESSOR
         </Link>
@@ -89,7 +90,7 @@ export default function Nav() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="font-mono text-[10px] tracking-[0.18em] text-accent mt-2"
+            className="font-sans text-[10px] tracking-[0.18em] text-accent mt-2"
           >
             BOOK A TRIAL →
           </Link>
