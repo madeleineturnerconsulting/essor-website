@@ -75,3 +75,4 @@ img { display: block; max-width: 100%; }
 /* FAQ accordion */
 details summary { list-style: none; }
 details summary::-webkit-details-marker { display: none; }
+.bg-ink, .bg-ink-soft { color: #FAFAF8; }
