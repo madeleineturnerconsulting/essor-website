@@ -6,11 +6,10 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "/", label: "Home" },
   { href: "/how-it-works", label: "How It Works" },
-  { href: "/the-data", label: "The Data" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/the-data",     label: "The Data"     },
+  { href: "/about",        label: "About"         },
+  { href: "/contact",      label: "Contact"       },
 ];
 
 export default function Nav() {
@@ -18,57 +17,84 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="bg-cream border-b border-burgundy-soft sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-8 h-20 flex items-center justify-between">
+    <header className="bg-paper sticky top-0 z-50 border-b border-rule">
+      {/* Desktop nav */}
+      <nav className="hidden md:grid grid-cols-[auto_1fr_auto] items-center px-14 py-7 gap-16">
+        {/* Wordmark — no letter-spacing */}
         <Link
           href="/"
-          className="font-serif text-2xl text-burgundy tracking-[0.25em] font-medium"
+          className="font-serif font-bold text-[26px] text-ink hover:opacity-60 transition-opacity"
         >
           ESSOR
         </Link>
 
-        <nav className="hidden md:flex items-center gap-12">
+        {/* Centre links */}
+        <div className="flex items-center justify-center gap-10">
           {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
-              className={`text-[11px] uppercase tracking-[0.2em] font-light transition-colors ${
+              className={`font-sans text-[13px] transition-colors pb-1 ${
                 pathname === href
-                  ? "text-burgundy"
-                  : "text-ink/60 hover:text-burgundy"
+                  ? "text-ink border-b border-ink"
+                  : "text-ink-soft hover:text-ink"
               }`}
             >
               {label}
             </Link>
           ))}
-        </nav>
+        </div>
 
+        {/* Trial link */}
+        <Link
+          href="/contact"
+          className="font-sans text-[10px] tracking-[0.18em] text-accent hover:opacity-70 transition-opacity"
+        >
+          BOOK A TRIAL →
+        </Link>
+      </nav>
+
+      {/* Mobile nav bar */}
+      <div className="md:hidden flex items-center justify-between px-6 py-5">
+        {/* Wordmark — no letter-spacing */}
+        <Link
+          href="/"
+          className="font-serif font-bold text-[22px] text-ink"
+        >
+          ESSOR
+        </Link>
         <button
-          className="md:hidden text-burgundy p-1"
           onClick={() => setOpen(!open)}
+          className="text-ink hover:opacity-60 transition-opacity"
           aria-label="Toggle menu"
         >
-          {open ? <X size={22} strokeWidth={1.25} /> : <Menu size={22} strokeWidth={1.25} />}
+          {open ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
         </button>
       </div>
 
+      {/* Mobile drawer */}
       {open && (
-        <div className="md:hidden bg-cream border-t border-burgundy-soft">
-          <nav className="max-w-6xl mx-auto px-8 py-6 flex flex-col gap-5">
-            {links.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                onClick={() => setOpen(false)}
-                className={`text-[11px] uppercase tracking-[0.2em] font-light ${
-                  pathname === href ? "text-burgundy" : "text-ink/60"
-                }`}
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
-        </div>
+        <nav className="md:hidden border-t border-rule bg-paper px-6 py-8 flex flex-col gap-6">
+          {links.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={() => setOpen(false)}
+              className={`font-sans text-[13px] transition-colors ${
+                pathname === href ? "text-ink" : "text-ink-soft"
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
+          <Link
+            href="/contact"
+            onClick={() => setOpen(false)}
+            className="font-sans text-[10px] tracking-[0.18em] text-accent mt-2"
+          >
+            BOOK A TRIAL →
+          </Link>
+        </nav>
       )}
     </header>
   );

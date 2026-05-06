@@ -1,100 +1,84 @@
 import Link from "next/link";
-import { Phone, ClipboardList, MapPin, PersonStanding, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const steps = [
   {
-    number: "01",
-    icon: Phone,
-    title: "Book a Discovery Call",
-    body: "We start with a conversation, no obligation, no pressure. Tell us about your team, your workplace, and what you are hoping to achieve. We will ask a few questions and share what we think could work.",
+    title: "We Tailor A Plan for You",
+    desc: "Based on your team size, and available space, we design a session schedule that fits your working week. We sort the logistics so you don't have to.",
+    meta: "TAILORED TO YOUR TEAM",
   },
   {
-    number: "02",
-    icon: ClipboardList,
-    title: "We Build Your Programme",
-    body: "Based on your goals, team size, and available space, we design a session schedule that fits your working week. We sort the logistics so you do not have to.",
-  },
-  {
-    number: "03",
-    icon: MapPin,
     title: "We Come to You",
-    body: "Your instructor arrives at your office ready to go. No equipment hire, no venue booking, no commute for your team. Pilates happens in your space, on your time.",
+    desc: "Your teacher arrives at your office ready to go. No equipment hire, no venue booking, no commute for your team. Pilates happens in your space, on your time.",
+    meta: "ON-SITE · NO FUSS",
   },
   {
-    number: "04",
-    icon: PersonStanding,
     title: "Your Team Moves",
-    body: "Sessions run for 45 to 60 minutes. Suitable for all fitness levels, no experience needed. We guide your people through every movement, whether it is their first class or their fiftieth.",
+    desc: "Sessions run for 30, 45 or 60 minutes. Suitable for all fitness levels, no experience needed. We guide your people through every movement, whether it is their first class or their fiftieth.",
+    meta: "30, 45 OR 60 MINUTES · ALL LEVELS",
   },
 ];
 
 export default function HowItWorksPage() {
   return (
     <>
-      {/* Header */}
-      <section className="bg-cream pt-32 pb-24 md:pt-44 md:pb-32">
-        <div className="max-w-6xl mx-auto px-8">
-          <div className="flex items-center gap-6 mb-12">
-            <div className="w-20 h-px bg-burgundy" />
-            <p className="text-[11px] uppercase tracking-[0.3em] text-burgundy font-light">
-              Our process
-            </p>
-          </div>
-          <h1 className="font-serif text-5xl md:text-7xl font-light tracking-tight leading-[1.05] max-w-3xl">
-            Simple by design. <em className="italic text-burgundy">Effortless by intention.</em>
+      {/* ── Page hero ───────────────────────────────────────── */}
+      <section className="px-14 pt-[120px] pb-[80px] grid md:grid-cols-2 gap-24 items-end">
+        <div>
+          <h1 className="font-serif font-light text-[clamp(52px,7.5vw,96px)] leading-none tracking-[-0.02em]">
+            How it <em className="italic">works.</em>
           </h1>
-          <p className="text-lg font-light text-ink/65 max-w-xl mt-12 leading-[1.8]">
-            From first call to first session, we make it easy. Four steps stand between you and a healthier workplace.
-          </p>
+        </div>
+        <p className="font-sans text-[17px] leading-[1.65] text-ink-soft max-w-[480px] md:pb-4">
+          A considered, three-step process designed to fit around the cadence of
+          your team and the dimensions of your workplace. No machinery, no fuss.
+          Just a teacher, a mat, and the better part of an hour.
+        </p>
+      </section>
+
+      {/* ── Image ───────────────────────────────────────────── */}
+      <section className="px-14 pb-[100px]">
+        <div className="relative h-[520px] bw-photo">
+          <Image
+            src="https://images.pexels.com/photos/4325446/pexels-photo-4325446.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            alt="In-house mat Pilates, boardroom conversion"
+            fill
+            className="object-cover"
+          />
         </div>
       </section>
 
-      {/* Steps */}
-      <section className="bg-cream pb-32 md:pb-44">
-        <div className="max-w-6xl mx-auto px-8">
-          <div className="border-t border-burgundy-soft">
-            {steps.map(({ number, icon: Icon, title, body }) => (
-              <div
-                key={number}
-                className="grid md:grid-cols-[10rem_4rem_1fr] gap-8 md:gap-12 py-16 md:py-20 border-b border-burgundy-soft"
-              >
-                <div>
-                  <p className="font-serif text-6xl md:text-7xl font-light text-burgundy leading-none">
-                    {number}
-                  </p>
-                </div>
-                <div className="flex items-start">
-                  <Icon size={22} strokeWidth={1.25} className="text-burgundy mt-3" />
-                </div>
-                <div className="max-w-xl">
-                  <p className="text-[11px] uppercase tracking-[0.25em] text-ink/40 mb-4 font-light">
-                    Step {number}
-                  </p>
-                  <h2 className="font-serif text-3xl md:text-4xl font-light mb-6 leading-tight">
-                    {title}
-                  </h2>
-                  <p className="text-base font-light text-ink/65 leading-[1.9]">
-                    {body}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="mt-24 max-w-3xl">
-            <p className="font-serif text-3xl md:text-4xl font-light italic leading-snug text-ink/85 mb-12">
-              When the logistics disappear, the consistency follows.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 bg-burgundy text-cream text-[11px] uppercase tracking-[0.25em] font-light px-12 py-5 hover:bg-ink transition-colors"
+      {/* ── Three steps ─────────────────────────────────────── */}
+      <section className="px-14 pb-[140px]">
+        <div className="border-t border-ink">
+          {steps.map(({ title, desc, meta }) => (
+            <div
+              key={title}
+              className="grid grid-cols-1 md:grid-cols-[1fr_280px] gap-8 md:gap-14 py-14 border-b border-rule items-start"
             >
-              Book a discovery call
-              <ArrowRight size={14} strokeWidth={1.25} />
-            </Link>
-          </div>
+              <div>
+                <h3 className="font-serif text-[36px] font-normal mb-10">{title}</h3>
+                <p className="font-sans text-[16px] text-ink-soft leading-[1.65] max-w-[560px]">{desc}</p>
+              </div>
+              <div className="hidden md:block font-sans text-[10px] tracking-[0.18em] text-ink-mute pt-4">
+                — {meta}
+              </div>
+            </div>
+          ))}
         </div>
+      </section>
+
+      {/* ── CTA ─────────────────────────────────────────────── */}
+      <section className="px-14 py-[140px] text-center">
+        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-none tracking-[-0.02em] max-w-[800px] mx-auto mb-20">
+          Begin with a <em className="italic">conversation.</em>
+        </h2>
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors"
+        >
+          Get in touch &nbsp;→
+        </Link>
       </section>
     </>
   );
