@@ -40,10 +40,9 @@ body {
 
 p { margin: 0; }
 
-/* DM Serif Display only ships at weight 400. We set 300 here so browsers
-   that support font-weight synthesis render a lighter stroke, and future
-   font swaps automatically inherit the lighter value. */
-h1, h2, h3, h4 { margin: 0; font-weight: 300; font-synthesis: weight; }
+/* DM Serif Display only ships at weight 400. We set 200 here to push
+   font-weight synthesis as far as possible for a lighter stroke. */
+h1, h2, h3, h4 { margin: 0; font-weight: 200; font-synthesis: weight; letter-spacing: -0.01em; }
 
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }

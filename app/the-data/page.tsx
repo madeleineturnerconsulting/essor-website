@@ -41,7 +41,7 @@ export default function TheDataPage() {
         <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-10">
           The why
         </div>
-        <h1 className="font-serif font-light text-[clamp(44px,7.5vw,96px)] leading-none tracking-[-0.02em] max-w-[1100px] mx-auto mb-24">
+        <h1 className="font-serif font-light text-[clamp(44px,7.5vw,96px)] leading-none tracking-[-0.02em] max-w-[1100px] mx-auto mb-32">
           The cost of doing nothing<br />
           is no longer <em className="italic">abstract.</em>
         </h1>
@@ -150,7 +150,7 @@ export default function TheDataPage() {
         <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-8 text-center">
           Return on movement
         </div>
-        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-[1.05] tracking-[-0.02em] text-center max-w-[980px] mx-auto mb-24">
+        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-[1.05] tracking-[-0.02em] text-center max-w-[980px] mx-auto mb-32">
           For every dollar spent on workplace wellbeing,{" "}
           <em className="italic">studies suggest</em> a return of 3:5.
         </h2>
@@ -187,15 +187,15 @@ export default function TheDataPage() {
 
       {/* ── CTA ─────────────────────────────────────────────── */}
       <section className="px-14 py-[140px] text-center">
-        <h2 className="font-serif font-light text-[clamp(36px,5.6vw,72px)] leading-none tracking-[-0.02em] max-w-[900px] mx-auto mb-20">
+        <h2 className="font-serif font-light text-[clamp(36px,5.6vw,72px)] leading-none tracking-[-0.02em] max-w-[900px] mx-auto mb-28">
           The case has been<br />made for you.
         </h2>
-        <p className="font-sans text-[16px] text-ink-soft max-w-[540px] mx-auto mb-28">
+        <p className="font-sans text-[16px] text-ink-soft max-w-[540px] mx-auto mb-36">
           ESSOR makes the next step simple.
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-4 px-7 py-[22px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors"
+          className="inline-flex items-center gap-4 px-9 py-[28px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors"
         >
           Get in touch &nbsp;→
         </Link>

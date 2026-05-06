@@ -94,7 +94,7 @@ export default function ContactPage() {
           <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-10">
             Contact
           </div>
-          <h1 className="font-serif font-light text-[clamp(44px,6.25vw,80px)] leading-none tracking-[-0.02em] mb-20">
+          <h1 className="font-serif font-light text-[clamp(44px,6.25vw,80px)] leading-none tracking-[-0.02em] mb-28">
             Get in <em className="italic">touch.</em>
           </h1>
           <p className="font-sans text-[16px] leading-[1.7] text-ink-soft max-w-[460px] mb-6">
@@ -146,7 +146,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={state === "submitting"}
-                  className="inline-flex items-center gap-4 px-7 py-[22px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors disabled:opacity-40"
+                  className="inline-flex items-center gap-4 px-9 py-[28px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors disabled:opacity-40"
                 >
                   {state === "submitting" ? "Sending…" : "Send →"}
                 </button>
