@@ -44,7 +44,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-4 px-9 py-[28px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors"
+              className="inline-flex items-center gap-4 px-9 py-[28px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors mt-10"
             >
               Book a Class &nbsp;→
             </Link>
@@ -217,7 +217,7 @@ export default function HomePage() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-4 px-9 py-[28px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors"
+              className="inline-flex items-center gap-4 px-9 py-[28px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors mt-10"
             >
               Book a Class
             </Link>
