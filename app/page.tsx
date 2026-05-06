@@ -31,20 +31,20 @@ export default function HomePage() {
           </div>
 
           <div>
-            <h1 className="font-serif font-light text-[clamp(52px,7vw,92px)] leading-none tracking-[-0.022em] mb-20">
+            <h1 className="font-serif font-light text-[clamp(52px,7vw,92px)] leading-none tracking-[-0.022em] mb-24">
               Your team<br />
               deserves to<br />
               <em className="italic text-accent">feel good</em><br />
               at work.
             </h1>
-            <p className="font-sans text-[17px] leading-[1.65] text-ink-soft max-w-[460px] mb-20">
+            <p className="font-sans text-[17px] leading-[1.65] text-ink-soft max-w-[460px] mb-24">
               ESSOR brings in-house Pilates to New Zealand workplaces, reducing
               absenteeism, easing stress, and building the kind of culture that
               keeps people around.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors"
+              className="inline-flex items-center gap-4 px-7 py-[22px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors"
             >
               Book a Class &nbsp;→
             </Link>
@@ -109,7 +109,7 @@ export default function HomePage() {
               key={label}
               className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-4 md:gap-8 py-8 border-b border-rule items-baseline"
             >
-              <h3 className="font-serif text-[24px] font-normal">{label}</h3>
+              <h3 className="font-serif text-[24px] font-light">{label}</h3>
               <p className="font-sans text-[15px] text-ink-soft leading-[1.55]">{value}</p>
             </div>
           ))}
@@ -164,7 +164,7 @@ export default function HomePage() {
                   borderBottom: row === 0 ? "1px solid var(--rule)" : "none",
                 }}
               >
-                <h3 className="font-serif text-[26px] font-normal leading-[1.15] mb-8">
+                <h3 className="font-serif text-[26px] font-light leading-[1.15] mb-8">
                   {title}
                 </h3>
                 <p className="font-sans text-[14px] text-ink-soft leading-[1.65]">{desc}</p>
@@ -202,7 +202,7 @@ export default function HomePage() {
       {/* ── Closing CTA ─────────────────────────────────────── */}
       <section className="px-14 py-[160px] grid md:grid-cols-2 gap-20 items-end">
         <div>
-          <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-10">
+          <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-12">
             Begin
           </div>
           <h2 className="font-serif font-light text-[clamp(44px,6.25vw,80px)] leading-none tracking-[-0.02em]">
@@ -210,20 +210,20 @@ export default function HomePage() {
           </h2>
         </div>
         <div>
-          <p className="font-sans text-[17px] leading-[1.65] text-ink-soft max-w-[480px] mb-28">
+          <p className="font-sans text-[17px] leading-[1.65] text-ink-soft max-w-[480px] mb-32">
             The case for workplace wellness has never been stronger. ESSOR makes
             it easy to act on it.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors"
+              className="inline-flex items-center gap-4 px-7 py-[22px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors"
             >
               Book a Class
             </Link>
             <Link
               href="/how-it-works"
-              className="inline-flex items-center gap-4 px-7 py-[18px] border border-ink text-ink font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink hover:text-white transition-colors"
+              className="inline-flex items-center gap-4 px-7 py-[22px] border border-ink text-ink font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink hover:text-white transition-colors"
             >
               See how it works
             </Link>

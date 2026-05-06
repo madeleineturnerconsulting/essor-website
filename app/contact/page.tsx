@@ -94,7 +94,7 @@ export default function ContactPage() {
           <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-10">
             Contact
           </div>
-          <h1 className="font-serif font-light text-[clamp(44px,6.25vw,80px)] leading-none tracking-[-0.02em] mb-16">
+          <h1 className="font-serif font-light text-[clamp(44px,6.25vw,80px)] leading-none tracking-[-0.02em] mb-20">
             Get in <em className="italic">touch.</em>
           </h1>
           <p className="font-sans text-[16px] leading-[1.7] text-ink-soft max-w-[460px] mb-6">
@@ -146,7 +146,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={state === "submitting"}
-                  className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors disabled:opacity-40"
+                  className="inline-flex items-center gap-4 px-7 py-[22px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors disabled:opacity-40"
                 >
                   {state === "submitting" ? "Sending…" : "Send →"}
                 </button>
@@ -175,7 +175,7 @@ export default function ContactPage() {
           {faqs.map(([question, answer]) => (
             <details key={question} className="border-b border-rule group">
               <summary className="flex justify-between items-center py-6 cursor-pointer">
-                <span className="font-serif text-[clamp(18px,2vw,26px)] font-normal">{question}</span>
+                <span className="font-serif text-[clamp(18px,2vw,26px)] font-light">{question}</span>
                 <span className="font-serif italic text-[22px] text-accent ml-4 flex-shrink-0">+</span>
               </summary>
               <p className="font-sans text-[15px] text-ink-soft leading-[1.7] max-w-[720px] pb-6">
