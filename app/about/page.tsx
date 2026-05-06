@@ -1,176 +1,100 @@
 import Link from "next/link";
-import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
-const values = [
-  ["Our mission", "Make workplace wellness the norm, not the exception."],
-  ["Our method",  "In-house Pilates, designed around your team and your space."],
-  ["Our standard","Qualified teachers. Sessions that fit real working weeks."],
-];
-
-const credentials = [
-  "Mat Pilates · Body Control Pilates, London",
-  "Pre and Post Natal Pilates · Barre Body",
-  "In-house Pilates for Auckland workplaces",
+const paragraphs = [
+  "ESSOR was born from two things: a deep love of movement, and first-hand experience of what happens when people don't have access to it. The numbers tell a clear story. New Zealand businesses lose $4.17 billion a year to absenteeism, and billions more to presenteeism, the quieter cost of people who show up every day but are running on empty. Regular movement during the workday is one of the most effective and accessible ways to change that. It is why ESSOR exists.",
+  "Throughout a corporate career spanning Digital and Growth roles across the UK, US and Australian markets, I almost always chose to work for purpose-led businesses in the wellness sector. What I noticed across those roles was consistent: when companies actively encouraged movement, everything shifted. People showed up differently, for themselves, for their teams, and for the business.",
+  "At a personalised nutrition scale-up, bonus incentives and lunchtime team workouts were part of the culture. At Nike, movement classes and physio during work hours were built into the day. The typical struggle of fitting in exercise around a commute simply wasn't an issue, and the culture reflected that. People were more willing to go above and beyond, and I genuinely believe that came down to senior leadership treating movement as a priority, not a perk.",
+  "Movement has been central to my life since childhood. While others went to netball, I was at kids yoga. That translated into a career in health and wellness, and in 2021 I decided to formalise it. I completed my Mat Pilates training at Body Control Pilates in London, a world-leading and highly respected teacher training institution, and went on to complete my Pre and Post Natal qualification through Barre Body.",
+  "I truly believe my purpose is to improve the lives of others through health and movement. Today, that takes shape through ESSOR. We come to your workplace, we run the session, and we make it easy for your people to show up. No gym memberships, no studio commute, no scheduling headaches. Just movement, where your team already is.",
 ];
 
 export default function AboutPage() {
   return (
     <>
-      {/* ── Hero ────────────────────────────────────────────── */}
-      <section className="px-14 pt-[120px] pb-[80px] grid md:grid-cols-2 gap-24 items-end">
-        <div>
-          <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-10">
-            Our story
+      {/* Header */}
+      <section className="bg-cream pt-32 pb-20 md:pt-44 md:pb-28">
+        <div className="max-w-6xl mx-auto px-8">
+          <div className="flex items-center gap-6 mb-12">
+            <div className="w-20 h-px bg-burgundy" />
+            <p className="text-[11px] uppercase tracking-[0.3em] text-burgundy font-light">
+              Our story
+            </p>
           </div>
-          <h1 className="font-serif font-light text-[clamp(52px,7.5vw,96px)] leading-none tracking-[-0.02em]">
-            About ESSOR.
+          <h1 className="font-serif text-5xl md:text-7xl font-light tracking-tight leading-[1.05] max-w-4xl">
+            A career in wellness, <em className="italic text-burgundy">brought home</em> to Aotearoa.
           </h1>
         </div>
-        <p className="font-serif italic text-[22px] font-light text-ink-mute leading-snug md:pb-4 tracking-wide">
-          ESSOR: to flourish, to take flight, to grow rapidly.
-        </p>
       </section>
 
-      {/* ── Full-width image ─────────────────────────────────── */}
-      <section className="px-14 pb-[100px]">
-        <div className="relative h-[520px] bw-photo">
-          <Image
-            src="https://images.pexels.com/photos/8436598/pexels-photo-8436598.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="Group mat Pilates session"
-            fill
-            className="object-cover"
-          />
-        </div>
-      </section>
-
-      {/* ── Story ───────────────────────────────────────────── */}
-      <section className="px-14 py-[120px] grid md:grid-cols-[1fr_1.4fr] gap-20">
-        <div className="relative h-[620px] bw-photo self-start">
-          <Image
-            src="https://images.pexels.com/photos/4498151/pexels-photo-4498151.jpeg?auto=compress&cs=tinysrgb&w=900"
-            alt="Mat Pilates movement"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div>
-          <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
-            The story
-          </div>
-          <h2 className="font-serif font-light text-[clamp(36px,4.4vw,56px)] leading-[1.05] tracking-[-0.02em] mb-16">
-            Movement is the<br />missing variable.
-          </h2>
-          {/* Each paragraph has explicit bottom margin; double spacing (mb-16)
-              applied after paragraphs ending at the four specified sentences */}
-          <div>
-            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft mb-16">
-              ESSOR was born from two things: a deep love of movement, and
-              first-hand experience of what happens when people don&apos;t have
-              access to it. The numbers tell a clear story. New Zealand
-              businesses lose $4.17 billion a year to absenteeism, and billions
-              more to presenteeism, the quieter cost of people who show up every
-              day but are running on empty. Regular movement during the workday
-              is one of the most effective and accessible ways to change that.
-              It is why ESSOR exists.
-            </p>
-            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft mb-16">
-              Throughout a corporate career spanning Digital and Growth roles
-              across the UK, US and Australian markets, I almost always chose to
-              work for purpose-led businesses in the wellness sector. What I
-              noticed across those roles was consistent: when companies actively
-              encouraged movement, everything shifted. People showed up
-              differently, for themselves, for their teams, and for the business.
-            </p>
-            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft mb-16">
-              At a personalised nutrition scale-up, bonus incentives and
-              lunchtime team workouts were part of the culture. At Nike, movement
-              classes and physio during work hours were built into the day. The
-              typical struggle of fitting in exercise around a commute simply
-              wasn&apos;t an issue, and the culture reflected that. People were more
-              willing to go above and beyond, and I genuinely believe that came
-              down to senior leadership treating movement as a priority, not a
-              perk.
-            </p>
-            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft mb-16">
-              Movement has been central to my life since childhood. While others
-              went to netball, I was at kids yoga. That translated into a career
-              in health and wellness, and in 2021 I decided to formalise it. I
-              completed my Mat Pilates training at Body Control Pilates in
-              London, a world-leading and highly respected teacher training
-              institution, and went on to complete my Pre and Post Natal
-              qualification through Barre Body.
-            </p>
-            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft mb-10">
-              I truly believe my purpose is to improve the lives of others
-              through health and movement.
-            </p>
-            <p className="font-sans text-[16px] leading-[1.7] text-ink-soft">
-              Today, that takes shape through ESSOR.
-              We come to your workplace, we run the session, and we make it easy
-              for your people to show up. No gym memberships, no studio commute,
-              no scheduling headaches. Just movement, where your team already is.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Values ──────────────────────────────────────────── */}
-      <section className="bg-paper-deep px-14 py-[120px]">
-        <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-8 text-center">
-          What we stand for
-        </div>
-        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-none tracking-[-0.02em] text-center mb-4">
-          What we <em className="italic">believe in.</em>
-        </h2>
-        <div className="grid md:grid-cols-3 border-t border-ink mt-14">
-          {values.map(([label, value], i) => (
-            <div
-              key={label}
-              className="p-8 min-h-[280px] border-b border-ink"
-              style={{ borderRight: i < 2 ? "1px solid var(--rule)" : "none" }}
-            >
-              <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-ink-mute mb-6">{label}</div>
-              <h3 className="font-serif text-[26px] font-normal leading-[1.2] mt-4">{value}</h3>
+      {/* Story */}
+      <section className="bg-cream pb-32 md:pb-44">
+        <div className="max-w-6xl mx-auto px-8">
+          <div className="grid md:grid-cols-[1fr_2fr] gap-12 md:gap-24 items-start border-t border-burgundy-soft pt-16 md:pt-20">
+            <div className="md:sticky md:top-32">
+              <p className="text-[11px] uppercase tracking-[0.25em] text-ink/40 mb-5 font-light">
+                Founder
+              </p>
+              <p className="font-serif text-2xl md:text-3xl font-light italic leading-snug text-burgundy mb-8">
+                Why ESSOR exists.
+              </p>
+              <p className="text-sm font-light text-ink/60 leading-[1.85] max-w-xs">
+                Five paragraphs on the corporate career, the training, and the conviction that movement at work changes everything.
+              </p>
             </div>
-          ))}
+
+            <div className="space-y-10 max-w-2xl">
+              {paragraphs.map((p, i) => (
+                <p
+                  key={i}
+                  className={`font-light text-ink/80 leading-[1.95] ${
+                    i === 0 ? "text-lg md:text-xl text-ink first-letter:font-serif first-letter:text-6xl first-letter:font-medium first-letter:text-burgundy first-letter:float-left first-letter:mr-3 first-letter:leading-[0.9] first-letter:mt-1" : "text-base"
+                  }`}
+                >
+                  {p}
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ── Qualifications ──────────────────────────────────── */}
-      <section className="px-14 py-[140px]">
-        <div className="grid md:grid-cols-[1fr_2fr] gap-20 items-start">
-          <div>
-            <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-8">
-              Qualifications
-            </div>
-            <h2 className="font-serif font-light text-[48px] leading-[1.05] tracking-[-0.02em] mb-10">
-              The teacher,<br />in detail.
-            </h2>
-          </div>
-          <ul className="m-0 p-0 list-none border-t border-ink">
-            {credentials.map((item) => (
-              <li
-                key={item}
-                className="font-serif text-[22px] font-normal py-5 border-b border-rule"
-              >
-                {item}
-              </li>
+      {/* Pull quote */}
+      <section className="bg-cream-warm py-32 md:py-44">
+        <div className="max-w-5xl mx-auto px-8">
+          <div className="w-16 h-px bg-burgundy mb-12" />
+          <p className="font-serif text-3xl md:text-5xl font-light italic leading-[1.3] text-ink/85">
+            &ldquo;I truly believe my purpose is to improve the lives of others through health and movement.&rdquo;
+          </p>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="bg-cream py-32 md:py-44">
+        <div className="max-w-6xl mx-auto px-8">
+          <div className="grid md:grid-cols-3 gap-x-12 gap-y-16">
+            {[
+              { label: "Our mission", value: "Make workplace wellness the norm, not the exception." },
+              { label: "Our method", value: "In-house Pilates, designed around your team and your space." },
+              { label: "Our standard", value: "Qualified instructors. Programmes that fit real working weeks." },
+            ].map(({ label, value }) => (
+              <div key={label} className="border-t border-burgundy pt-10">
+                <p className="text-[11px] uppercase tracking-[0.25em] text-ink/40 mb-6 font-light">{label}</p>
+                <p className="font-serif text-2xl md:text-3xl font-light leading-snug">{value}</p>
+              </div>
             ))}
-          </ul>
-        </div>
-      </section>
+          </div>
 
-      {/* ── CTA ─────────────────────────────────────────────── */}
-      <section className="px-14 py-[140px] text-center border-t border-ink">
-        <h2 className="font-serif font-light text-[clamp(36px,5vw,64px)] leading-none tracking-[-0.02em] max-w-[800px] mx-auto mb-20">
-          Invest in your people.
-        </h2>
-        <Link
-          href="/contact"
-          className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors"
-        >
-          Get in touch &nbsp;→
-        </Link>
+          <div className="mt-24 pt-16 border-t border-burgundy-soft">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 bg-burgundy text-cream text-[11px] uppercase tracking-[0.25em] font-light px-12 py-5 hover:bg-ink transition-colors"
+            >
+              Work with us
+              <ArrowRight size={14} strokeWidth={1.25} />
+            </Link>
+          </div>
+        </div>
       </section>
     </>
   );

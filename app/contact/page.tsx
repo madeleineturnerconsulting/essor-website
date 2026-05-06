@@ -1,53 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 type FormState = "idle" | "submitting" | "success" | "error";
-
-const faqs: [string, string][] = [
-  ["What does a first session look like?",
-   "Your teacher arrives 15 minutes early. Mats are laid out. The team gathers. We move, breathe, and reset together. 30, 45 or 60 minutes."],
-  ["Do we need any equipment?",
-   "Mats can be provided on request. No reformers, no machinery. A clear, quiet space is enough."],
-  ["Can sessions be virtual?",
-   "Yes. Up to 100 participants on Zoom or Teams, on-site in Auckland, or a blend of both."],
-  ["How is pricing structured?",
-   "By session, with a small discount for ongoing weekly or fortnightly cadences. We send a written proposal within two working days."],
-  ["Do you teach pre and postnatal?",
-   "Yes. Your teacher is fully certified and adapts the practice as needed for any participant."],
-];
-
-function Field({
-  label, name, placeholder, type = "text", textarea, required,
-}: {
-  label: string; name: string; placeholder?: string;
-  type?: string; textarea?: boolean; required?: boolean;
-}) {
-  return (
-    <label className="block border-b border-rule py-5">
-      <div className="font-sans text-[10px] tracking-[0.2em] text-ink-mute mb-2">{label}</div>
-      {textarea ? (
-        <textarea
-          name={name}
-          placeholder={placeholder}
-          rows={4}
-          required={required}
-          className="field-underline resize-none"
-          style={{ borderBottom: "none" }}
-        />
-      ) : (
-        <input
-          name={name}
-          type={type}
-          placeholder={placeholder}
-          required={required}
-          className="field-underline"
-          style={{ borderBottom: "none" }}
-        />
-      )}
-    </label>
-  );
-}
 
 export default function ContactPage() {
   const [state, setState] = useState<FormState>("idle");
@@ -59,24 +15,25 @@ export default function ContactPage() {
     setErrorMsg("");
 
     const form = e.currentTarget;
-    const get = (n: string) =>
-      (form.elements.namedItem(n) as HTMLInputElement | HTMLTextAreaElement)?.value ?? "";
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
 
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: get("name"),
-          company: get("company"),
-          email: get("email"),
-          message: get("message"),
-        }),
+        body: JSON.stringify(data),
       });
+
       if (!res.ok) {
         const json = await res.json();
         throw new Error(json.error || "Something went wrong.");
       }
+
       setState("success");
       form.reset();
     } catch (err) {
@@ -85,106 +42,118 @@ export default function ContactPage() {
     }
   }
 
+  const inputClasses =
+    "w-full border-b border-burgundy-soft bg-transparent px-0 py-4 text-base font-light text-ink placeholder:text-ink/30 focus:outline-none focus:border-burgundy transition-colors";
+  const labelClasses =
+    "text-[11px] uppercase tracking-[0.25em] text-ink/50 font-light";
+
   return (
-    <>
-      {/* ── Two-column layout ────────────────────────────────── */}
-      <section className="px-14 py-[120px] grid md:grid-cols-[1fr_1.1fr] gap-24 min-h-[900px]">
-        {/* Left */}
-        <div>
-          <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-10">
-            Contact
-          </div>
-          <h1 className="font-serif font-light text-[clamp(44px,6.25vw,80px)] leading-none tracking-[-0.02em] mb-16">
-            Get in <em className="italic">touch.</em>
-          </h1>
-          <p className="font-sans text-[16px] leading-[1.7] text-ink-soft max-w-[460px] mb-6">
-            Tell us about your team and your workplace. We will get back to you
-            within one business day.
-          </p>
-          <p className="font-sans text-[16px] leading-[1.7] text-ink-soft max-w-[460px] mb-16">
-            Pricing on request.
-          </p>
-          <div className="border-t border-ink pt-10">
-            <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-ink-mute mb-6">
-              Or reach us directly
-            </div>
-            <div className="font-serif text-[28px] font-light tracking-[-0.01em]">
-              hello@essor.nz
-            </div>
-          </div>
-        </div>
-
-        {/* Right — form */}
-        <div>
-          {state === "success" ? (
-            <div className="border-t border-ink pt-10">
-              <p className="font-serif text-[32px] font-light tracking-[-0.02em]">
-                Thank you. We&apos;ll be in touch shortly.
+    <section className="bg-cream pt-32 pb-32 md:pt-44 md:pb-44">
+      <div className="max-w-6xl mx-auto px-8">
+        <div className="grid md:grid-cols-[1fr_1.3fr] gap-16 md:gap-28 items-start">
+          {/* Left, intro */}
+          <div className="md:sticky md:top-32">
+            <div className="flex items-center gap-6 mb-12">
+              <div className="w-20 h-px bg-burgundy" />
+              <p className="text-[11px] uppercase tracking-[0.3em] text-burgundy font-light">
+                Let&apos;s talk
               </p>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="border-t border-ink">
-              <div className="grid grid-cols-2 gap-6">
-                <Field label="01 · YOUR NAME" name="name"    placeholder="Jane Doe"          required />
-                <Field label="02 · COMPANY"   name="company" placeholder="Company name"      required />
-              </div>
-              <Field label="03 · EMAIL"   name="email"   placeholder="jane@company.co.nz" type="email" required />
-              <Field label="04 · MESSAGE" name="message"
-                     placeholder="Tell us about your team and your workplace."
-                     textarea required />
+            <h1 className="font-serif text-5xl md:text-6xl font-light tracking-tight leading-[1.05] mb-10">
+              Start the <em className="italic text-burgundy">conversation</em>.
+            </h1>
+            <p className="text-base font-light text-ink/65 leading-[1.85] max-w-sm mb-12">
+              Tell us about your team and what you are hoping to achieve. We will get back to you within one business day.
+            </p>
 
-              {state === "error" && (
-                <p className="font-sans text-[13px] text-ink-soft py-4 border-b border-rule">
-                  {errorMsg}
+            <div className="border-t border-burgundy-soft pt-8 space-y-3">
+              <p className="text-[11px] uppercase tracking-[0.25em] text-ink/40 font-light">
+                Or reach us directly
+              </p>
+              <p className="font-serif text-xl text-burgundy">hello@essor.co.nz</p>
+            </div>
+          </div>
+
+          {/* Right, form */}
+          <div>
+            {state === "success" ? (
+              <div className="border-t border-burgundy pt-12">
+                <p className="font-serif text-3xl md:text-4xl font-light italic text-burgundy mb-6 leading-tight">
+                  Thank you.
                 </p>
-              )}
-
-              <div className="flex justify-between items-center pt-10">
-                <span className="font-sans text-[10px] tracking-[0.18em] text-ink-mute">
-                  REPLY · WITHIN 1 BUSINESS DAY
-                </span>
-                <button
-                  type="submit"
-                  disabled={state === "submitting"}
-                  className="inline-flex items-center gap-4 px-7 py-[18px] bg-ink text-white font-sans text-[12px] tracking-[0.18em] uppercase rounded-full hover:bg-ink-soft transition-colors disabled:opacity-40"
-                >
-                  {state === "submitting" ? "Sending…" : "Send →"}
-                </button>
+                <p className="text-base font-light text-ink/70 leading-[1.85] max-w-md">
+                  Your message has been received. We will be in touch shortly.
+                </p>
               </div>
-            </form>
-          )}
-        </div>
-      </section>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-12">
+                <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
+                  <div className="space-y-3">
+                    <label className={labelClasses}>Name</label>
+                    <input
+                      name="name"
+                      type="text"
+                      required
+                      className={inputClasses}
+                      placeholder="Your name"
+                    />
+                  </div>
 
-      {/* ── Pull quote ───────────────────────────────────────── */}
-      <section className="bg-paper-deep px-14 py-[120px] text-center">
-        <p className="font-serif italic font-light text-[clamp(24px,3.4vw,44px)] leading-[1.25] max-w-[1000px] mx-auto">
-          &ldquo;Begin with a conversation. The right rhythm reveals itself once we have walked your floor.&rdquo;
-        </p>
-        <div className="font-sans text-[10px] tracking-[0.22em] text-ink-mute mt-8">
-          · ESSOR PRACTICE NOTE
-        </div>
-      </section>
+                  <div className="space-y-3">
+                    <label className={labelClasses}>Company</label>
+                    <input
+                      name="company"
+                      type="text"
+                      required
+                      className={inputClasses}
+                      placeholder="Your company"
+                    />
+                  </div>
+                </div>
 
-      {/* ── FAQ ─────────────────────────────────────────────── */}
-      <section className="px-14 py-[120px]">
-        <div className="font-sans text-[10px] tracking-[0.18em] uppercase text-accent mb-10">
-          Frequently asked
+                <div className="space-y-3">
+                  <label className={labelClasses}>Email</label>
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    className={inputClasses}
+                    placeholder="you@company.com"
+                  />
+                </div>
+
+                <div className="space-y-3">
+                  <label className={labelClasses}>Message</label>
+                  <textarea
+                    name="message"
+                    required
+                    rows={5}
+                    className={`${inputClasses} resize-none leading-[1.8]`}
+                    placeholder="Tell us about your team and your space."
+                  />
+                </div>
+
+                {state === "error" && (
+                  <p className="text-sm font-light text-burgundy border-t border-burgundy pt-4">
+                    {errorMsg}
+                  </p>
+                )}
+
+                <div className="pt-4">
+                  <button
+                    type="submit"
+                    disabled={state === "submitting"}
+                    className="inline-flex items-center gap-3 bg-burgundy text-cream text-[11px] uppercase tracking-[0.25em] font-light px-12 py-5 hover:bg-ink transition-colors disabled:opacity-40"
+                  >
+                    {state === "submitting" ? "Sending" : "Send message"}
+                    {state !== "submitting" && <ArrowRight size={14} strokeWidth={1.25} />}
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
         </div>
-        <div className="border-t border-ink">
-          {faqs.map(([question, answer]) => (
-            <details key={question} className="border-b border-rule group">
-              <summary className="flex justify-between items-center py-6 cursor-pointer">
-                <span className="font-serif text-[clamp(18px,2vw,26px)] font-normal">{question}</span>
-                <span className="font-serif italic text-[22px] text-accent ml-4 flex-shrink-0">+</span>
-              </summary>
-              <p className="font-sans text-[15px] text-ink-soft leading-[1.7] max-w-[720px] pb-6">
-                {answer}
-              </p>
-            </details>
-          ))}
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
